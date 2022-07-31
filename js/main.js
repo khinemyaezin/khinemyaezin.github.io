@@ -4,25 +4,20 @@
  });
 
 (function($) {
-
+	
 	let fullHeight = function() {
 		$('.js-fullheight').css('height', $(window).height());
 		$(window).resize(function(){
 			$('.js-fullheight').css('height', $(window).height());
 		});
-
 	};
 	fullHeight();
 
 
-	// Scrollax
-   $.Scrollax();
+   // Menu
+	var menu = function() {
 
-
-   // Burger Menu
-	var burgerMenu = function() {
-
-		$('body').on('click', '.js-fh5co-nav-toggle', function(event){
+		$('body').on('click', '.js-nav-toggle', function(event){
 
 			event.preventDefault();
 
@@ -31,57 +26,10 @@
 			} else {
 				$(this).addClass('active');	
 			}
-
-			
-			
 		});
 
 	};
-	burgerMenu();
-
-
-	var onePageClick = function() {
-
-
-		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
-	    event.preventDefault();
-
-	    var href = $.attr(this, 'href');
-
-	    $('html, body').animate({
-	        scrollTop: $($.attr(this, 'href')).offset().top - 70
-	    }, 500, function() {
-	    	// window.location.hash = href;
-	    });
-		});
-
-	};
-
-	onePageClick();
-
-	$('nav .dropdown').hover(function(){
-		var $this = $(this);
-		// 	 timer;
-		// clearTimeout(timer);
-		$this.addClass('show');
-		$this.find('> a').attr('aria-expanded', true);
-		// $this.find('.dropdown-menu').addClass('animated-fast fadeInUp show');
-		$this.find('.dropdown-menu').addClass('show');
-	}, function(){
-		var $this = $(this);
-			// timer;
-		// timer = setTimeout(function(){
-			$this.removeClass('show');
-			$this.find('> a').attr('aria-expanded', false);
-			// $this.find('.dropdown-menu').removeClass('animated-fast fadeInUp show');
-			$this.find('.dropdown-menu').removeClass('show');
-		// }, 100);
-	});
-
-
-	$('#dropdown04').on('show.bs.dropdown', function () {
-	  console.log('show');
-	});
+	menu();
 
 	// scroll
 	var scrollWindow = function() {
@@ -123,33 +71,23 @@
 	};
 	scrollWindow();
 
-	
 
-	// var counter = function() {
-		
-	// 	$('#section-counter, .hero-wrap, .ftco-counter, .ftco-about').waypoint( function( direction ) {
+	var onePageClick = function() {
 
-	// 		if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
+		$(document).on('click', '#ftco-nav a[href^="#"]', function (event) {
+	    event.preventDefault();
 
-	// 			var comma_separator_number_step = $.animateNumber.numberStepFactories.separator(',')
-	// 			$('.number').each(function(){
-	// 				var $this = $(this),
-	// 					num = $this.data('number');
-	// 					console.log(num);
-	// 				$this.animateNumber(
-	// 				  {
-	// 				    number: num,
-	// 				    numberStep: comma_separator_number_step
-	// 				  }, 7000
-	// 				);
-	// 			});
-				
-	// 		}
+	    var href = $.attr(this, 'href');
 
-	// 	} , { offset: '95%' } );
+	    $('html, body').animate({
+	        scrollTop: $($.attr(this, 'href')).offset().top - 70
+	    }, 500, function() {
+	    	// window.location.hash = href;
+	    });
+		});
 
-	// }
-	// counter();
+	};
+	onePageClick();
 
 
 	var contentWayPoint = function() {
@@ -187,6 +125,40 @@
 		} , { offset: '95%' } );
 	};
 	contentWayPoint();
+
+	var textTypeV2 = function(destination, data) {
+        var aText = data;
+        var iSpeed = 150; // time delay of print out
+        var iIndex = 0; // start printing array at this posision
+        var iArrLength = aText[0].length; // the length of the text array
+        var iScrollAt = 20; // start scrolling up at this many lines
+
+        var iTextPos = 0; // initialise text position
+        var sContents = ""; // initialise contents variable
+        var iRow; // initialise current row
+
+        function typewriter() {
+            sContents = " ";
+            iRow = Math.max(0, iIndex - iScrollAt);
+            while (iRow < iIndex) {
+                sContents += aText[iRow++] + "<br />";
+            }
+            destination.innerHTML =
+                sContents + aText[iIndex].substring(0, iTextPos) + "";
+            if (iTextPos++ == iArrLength) {
+                iTextPos = 0;
+                iIndex++;
+                if (iIndex != aText.length) {
+                    iArrLength = aText[iIndex].length;
+                    setTimeout(typewriter, 500);
+                }
+            } else {
+                setTimeout(typewriter, iSpeed);
+            }
+        }
+        typewriter();
+    }
+	textTypeV2(document.querySelector(".typewrite-v2"),['A Software Developer']);
 
 })(jQuery);
 

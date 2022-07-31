@@ -10563,7 +10563,6 @@ a.text-dark:hover, a.text-dark:focus {
 
 body {
   font-family: "Poppins", Arial, sans-serif;
-  background: #000000;
   font-size: 16px;
   line-height: 1.8;
   font-weight: 400;
@@ -10602,6 +10601,11 @@ h5,
   line-height: 1.5;
   color: white;
   font-weight: 400;
+}
+
+.bi {
+  margin: 0.25rem;
+  font-size: 2.5rem;
 }
 
 .text-primary {
@@ -10984,6 +10988,7 @@ h5,
 
 .hero .home-item .home-text .one-forth .text {
   width: 100%;
+  text-transform: uppercase;
 }
 
 @media (min-width: 992px) {
@@ -11003,10 +11008,26 @@ h5,
 .hero .home-item .home-text .subheading {
   color: #000000;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 20px;
   letter-spacing: 3px;
-  text-transform: uppercase;
   color: #ffbd39;
+  position: relative;
+}
+
+.hero .home-item .home-text .subheading::after {
+  content: "";
+  width: 410px;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  background: white;
+}
+
+@media (max-width: 991.98px) {
+  .hero .home-item .home-text .subheading::after {
+    display: none;
+  }
 }
 
 .hero .home-item .home-text .text {
@@ -11023,7 +11044,10 @@ h5,
 
 .hero .home-item .home-text h1 span {
   font-weight: 800;
-  color: #ffbd39;
+  background: -webkit-gradient(linear, left top, right top, from(#fbb33f), to(#fcf746));
+  background: linear-gradient(90deg, #fbb33f 0%, #fcf746 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media (max-width: 991.98px) {
@@ -11162,15 +11186,14 @@ h5,
 }
 
 .btn.btn-primary {
-  background: #ffbd39;
+  background: -webkit-gradient(linear, left top, right top, from(#fbb33f), to(#fcf746));
+  background: linear-gradient(90deg, #fbb33f 0%, #fcf746 100%);
   border: 1px solid #ffbd39 !important;
   color: #000000 !important;
 }
 
 .btn.btn-primary:hover {
-  border: 1px solid #ffbd39 !important;
-  background: #ffbd39 !important;
-  color: #000000 !important;
+  background: #ffbd39;
 }
 
 .btn.btn-primary.btn-outline-primary {
@@ -11231,6 +11254,86 @@ h5,
   border: 1px solid transparent;
   background: #ffbd39;
   color: #fff;
+}
+
+.btn.btn-point {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.btn.btn-point span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn.btn-point span:after {
+  content: "\F285";
+  font-family: "bootstrap-icons";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.btn.btn-point:hover span {
+  padding-right: 25px;
+}
+
+.btn.btn-point:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.btn.button {
+  display: inline-block;
+  color: #000000 !important;
+  background: -webkit-gradient(linear, left top, right top, from(#fbb33f), to(#fcf746));
+  background: linear-gradient(90deg, #fbb33f 0%, #fcf746 100%);
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.btn.button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffbd39;
+  border-radius: 40px;
+  z-index: -2;
+}
+
+.btn.button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #ec9d00;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  border-radius: 40px;
+  z-index: -1;
+}
+
+.btn.button:hover {
+  color: #fff;
+}
+
+.btn.button:hover:before {
+  width: 100%;
 }
 
 .ftco-about .img-about {
@@ -12105,7 +12208,7 @@ textarea.form-control {
   border-radius: 50%;
 }
 
-.contact-section .box .icon span {
+.contact-section .box .icon i {
   color: #ffbd39;
   font-size: 30px;
 }
@@ -12478,6 +12581,54 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px;
+  }
+}
+
+.blinker {
+  position: relative;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.anim-typewriter {
+  -webkit-animation: blinkTextCursor 1000ms steps(44) infinite normal;
+  animation: blinkTextCursor 1000ms steps(44) infinite normal;
+}
+
+@-webkit-keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5rem;
+  }
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5rem;
+  }
+}
+
+@-webkit-keyframes blinkTextCursor {
+  from {
+    border-right-color: #ffbd39;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #ffbd39;
+  }
+  to {
+    border-right-color: transparent;
   }
 }
 /*# sourceMappingURL=style.css.map */

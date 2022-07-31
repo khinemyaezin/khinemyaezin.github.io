@@ -11,29 +11,27 @@
 	<link rel="stylesheet" href="scss/animate.css">
 	<link rel="stylesheet" href="scss/aos.css">
 	<link rel="stylesheet" href="scss/icomoon.css">
+	<link rel="stylesheet" href="scss/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" href="scss/typewriter.css">
+	
 	<link rel="stylesheet" href="scss/style.css">
 </head>
 
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300"
+	style="background: url('images/bg-body.png') no-repeat center black;">
 
 
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">KMZ</a>
-			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
-				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+			<button class="navbar-toggler js-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav"
+				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="oi oi-menu"></span> Menu
 			</button>
 
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
-					<!-- <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-					<li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li>
-					<li class="nav-item"><a href="#skills-section" class="nav-link"><span>Skills</span></a></li>
-					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li> -->
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
 			</div>
@@ -45,18 +43,19 @@
 			<div class="container">
 				<div class="row d-flex no-gutters home-text align-items-end justify-content-end"
 					data-scrollax-parent="true">
-					<div class="one-third js-fullheight img" style="background-image:url(images/bg_1.png);">
+					<div class="one-third js-fullheight img" style="background-image:url(images/bg_2.png);">
 						<div class="overlay"></div>
 					</div>
 					<div class="one-forth d-flex align-items-center ftco-animate"
 						data-scrollax=" properties: { translateY: '70%' }">
 						<div class="text">
-							<span class="subheading">Hello!</span>
+							<h1 class="subheading">Hello!</h1>
 							<h1 class="mb-4 mt-3">I'm <span>Khine Myae Zin</span></h1>
-							<h2 class="mb-4">A Software Developer</h2>
+							<h2 class="mb-4">
+								<span class="typewrite-v2 blinker anim-typewriter text-wrap"></span>
+							</h2>
 							<p>
-								<a href="tel://+959795957915" class="btn btn-primary py-3 px-4">Call Me</a>
-								<!-- <a href="#" class="btn btn-white btn-outline-white py-3 px-4">My works</a> -->
+								<a href="tel://+959795957915" class="btn button py-3 px-4">Call Me</a>
 							</p>
 						</div>
 					</div>
@@ -81,36 +80,33 @@
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 					<div class="align-self-stretch box p-4 text-center">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-map-signs"></span>
+							<i class="bi bi-map-fill"></i>
 						</div>
-						<h3 class="mb-4">Address</h3>
 						<p>Yangon, Myanmar</p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 					<div class="align-self-stretch box p-4 text-center">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-phone2"></span>
+							<i class="bi bi-telephone-fill"></i>
 						</div>
-						<h3 class="mb-4">Contact Number</h3>
+						
 						<p><a href="tel://+959795957915">+95 9795957915</a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 					<div class="align-self-stretch box p-4 text-center">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-paper-plane"></span>
+							<i class="bi bi-send-fill"></i>
 						</div>
-						<h3 class="mb-4">Email Address</h3>
 						<p><a href="mailto:me@khinemyaezin.com">me@khinemyaezin.com</a></p>
 					</div>
 				</div>
 				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
 					<div class="align-self-stretch box p-4 text-center">
 						<div class="icon d-flex align-items-center justify-content-center">
-							<span class="icon-globe"></span>
+							<i class="bi bi-globe"></i>
 						</div>
-						<h3 class="mb-4">Website</h3>
 						<p><a href="#">khinemyaezin.github.io</a></p>
 					</div>
 				</div>
@@ -133,11 +129,16 @@
 							development life cycle and agile development
 							methodology. </p>
 						<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-							<!-- <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>-->
-							<li class="ftco-animate"><a href="https://www.linkedin.com/in/khinemyaezin"><span
-										class="icon-linkedin-square"></span></a></li>
-							<li class="ftco-animate"><a href="https://api.whatsapp.com/send?phone=959795957915"><span
-										class="icon-whatsapp"></span></a></li>
+							<li class="ftco-animate">
+								<a href="https://www.linkedin.com/in/khinemyaezin">
+									<span class="icon-linkedin-square"></span>
+								</a>
+							</li>
+							<li class="ftco-animate">
+								<a href="https://api.whatsapp.com/send?phone=959795957915">
+									<span class="icon-whatsapp"></span>
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -146,10 +147,8 @@
 				<div class="col-md-12 text-center">
 
 					<p>
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;
 						<script>document.write(new Date().getFullYear());</script> All rights reserved
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
 			</div>
