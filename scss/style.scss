@@ -690,7 +690,7 @@ h5,
   }
   &.button {
     display: inline-block;
-    color: $black !important;
+    color: $black;
     background: $primary-linear-background;
     transition: all .3s;
     position: relative;
