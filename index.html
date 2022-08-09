@@ -6,7 +6,13 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Monoton&family=Ubuntu+Mono:wght@400;700&display=swap"
+		rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
 	<link rel="stylesheet" href="scss/animate.css">
 	<link rel="stylesheet" href="scss/aos.css">
@@ -17,10 +23,7 @@
 	<link rel="stylesheet" href="scss/style.css">
 </head>
 
-<body data-bs-spy="scroll" data-target=".site-navbar-target" data-offset="300"
-	style="background: url('images/bg-body.png') no-repeat center black;">
-
-
+<body data-bs-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">KMZ</a>
@@ -33,190 +36,386 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav nav ml-auto">
 					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#projects-section" class="nav-link"><span>Work</span></a></li>
 					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<section id="home-section" class="hero">
-		<div class="home-item">
-			<div class="overlay"></div>
-			<div class="container">
-				<div class="row d-flex no-gutters home-text align-items-end justify-content-end"
-					data-scrollax-parent="true">
-					<div class="one-third js-fullheight img" style="background-image:url(images/bg_2.png);">
-						<div class="overlay"></div>
+	<aside class="left">
+		<ul class="list-unstyled social">
+			<li>
+				<a href="https://api.whatsapp.com/send?phone=959795957915" aria-label="whatsapp" target="_blank"
+					rel="noreferrer">
+					<i class="bi bi-whatsapp"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://www.linkedin.com/in/khinemyaezin" aria-label="Linkin" target="_blank" rel="noreferrer">
+					<i class="bi bi-linkedin"></i>
+				</a>
+			</li>
+			<li>
+				<a href="https://github.com/khinemyaezin" aria-label="GitHub" target="_blank" rel="noreferrer">
+					<i class="bi bi-github"></i>
+				</a>
+			</li>
+
+		</ul>
+	</aside>
+	<aside class="right">
+		<ul class="list-unstyled email">
+			<li>
+				<a href="">hello@khinemyaezin.com</a>
+			</li>
+
+		</ul>
+	</aside>
+	<main class="main">
+		<section id="home-section" class="hero">
+			<div class="home-item">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-flex no-gutters home-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight img">
+							<div class="overlay"></div>
+							<div class="spinner-box">
+								<div class="blue-orbit box">
+								</div>
+								<div class="green-orbit box">
+								</div>
+								<div class="red-orbit box">
+								</div>
+								<div class="white-orbit w1 box">
+								</div>
+								<div class="white-orbit w2 box">
+								</div>
+								<div class="white-orbit w3 box">
+								</div>
+							</div>
+						</div>
+						<div class="one-forth d-flex align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<h1 class="subheading animate">Hello! I'm</h1>
+								<h1 class="wavity animate delay04">
+									<span class="wavity-item" style="--i:1">K</span>
+									<span class="wavity-item" style="--i:2">h</span>
+									<span class="wavity-item" style="--i:3">i</span>
+									<span class="wavity-item" style="--i:4">n</span>
+									<span class="wavity-item" style="--i:5">e</span>
+									<span style="padding:5px"></span>
+									<span class="wavity-item" style="--i:6">M</span>
+									<span class="wavity-item" style="--i:7">y</span>
+									<span class="wavity-item" style="--i:8">a</span>
+									<span class="wavity-item" style="--i:9">e</span>
+									<span style="padding:5px"></span>
+									<span class="wavity-item" style="--i:10">Z</span>
+									<span class="wavity-item" style="--i:11">i</span>
+									<span class="wavity-item" style="--i:12">n</span>
+								</h1>
+								<h2 class="job animate delay08">
+									<span class="typewrite-v2 blinker anim-typewriter text-wrap"></span>
+								</h2>
+								<p>I am a software developer specializing in backend development.</p>
+								<p>
+									<a href="tel://+959795957915" class="btn btn-primary btn-outline-primary py-3 px-4">
+										Call Me
+									</a>
+								</p>
+							</div>
+
+						</div>
+
 					</div>
-					<div class="one-forth d-flex align-items-center ftco-animate"
-						data-scrollax=" properties: { translateY: '70%' }">
-						<div class="text">
-							<h1 class="subheading animate">Hello! I'm</h1>
-							<h1 class="wavity animate delay04">
-								<span class="wavity-item" style="--i:1">K</span>
-								<span class="wavity-item" style="--i:2">h</span>
-								<span class="wavity-item" style="--i:3">i</span>
-								<span class="wavity-item" style="--i:4">n</span>
-								<span class="wavity-item" style="--i:5">e</span>
-								<span style="padding:5px"></span>
-								<span class="wavity-item" style="--i:6">M</span>
-								<span class="wavity-item" style="--i:7">y</span>
-								<span class="wavity-item" style="--i:8">a</span>
-								<span class="wavity-item" style="--i:9">e</span>
-								<span style="padding:5px"></span>
-								<span class="wavity-item" style="--i:10">Z</span>
-								<span class="wavity-item" style="--i:11">i</span>
-								<span class="wavity-item" style="--i:12">n</span>
-							</h1>
-							<h2 class="mb-4 job animate delay08">
-								<span class="typewrite-v2 blinker anim-typewriter text-wrap"></span>
-							</h2>
-							<p>
-								<a href="tel://+959795957915" class="btn btn-primary btn-outline-primary py-3 px-4">Call
-									Me</a>
-								<!-- <a href="projects.html" class="btn btn-primary btn-outline-primary py-3 px-4">Projects</a> -->
+				</div>
+
+			</div>
+		</section>
+		<section class="section about pt-0" id="about-section">
+			<div class="container">
+				<div class="row justify-content-center py-5 mt-5">
+					<div class="col col-md-12 heading-section text-center" data-aos="zoom-in-down">
+						<h1 class="big big-2">About</h1>
+						<h2 class="mb-4">Who I am</h2>
+						<p>Let me tell you about myself little bit.</p>
+					</div>
+				</div>
+				<div class="row row-cols-1 row-cols-lg-2 g-3">
+					<div class="col">
+						<div class="card-flip h-100 text-white rounded-5" data-aos="zoom-out-down" data-aos-delay="300">
+							<div class="card-flip-inner">
+								<div class="card-flip-front">
+									<img class="align-self-center card-img" src="images/blog.svg" alt="">
+								</div>
+								<div class="card-flip-back">
+									<img class="card-img w-100" src="images/profile_1.png" alt="">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col d-flex">
+						<div class="align-self-center description">
+							<p class="hero_desc">
+								Hello! My name is <span class="hightlight">Khine Myae Zin</span> and I enjoy creating
+								things for the web. I am a
+								small living thing on the earth trying to catch up modern technologies to build
+								something great to the people.
+								Currently, I’m focused on
 							</p>
-						</div>
+							<h3 data-aos="zoom-in" data-aos-once="false">WEB Development</h3>
+							<p data-aos="zoom-in-down">Here are a few technologies I’ve been working with recently:</p>
+							<div class="row">
+								<div class="col"></div>
+							</div>
+							<ul class="skills-list">
+								<li>Java Spring MVC/boot</li>
+								<li>C#</li>
+								<li>PHP Laravel</li>
+								<li>JavaScript</li>
+								<li>Angular</li>
+								<li>Bootstrap</li>
+								<li>Ionic</li>
+								<li>Postgresql</li>
+								<li>MySQL</li>
+								<li>MS SQL</li>
+								<li>Index DB</li>
+							</ul>
 
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<section class="ftco-section ftco-project" id="projects-section">
-		<div class="container">
-			<div class="row justify-content-center pb-5">
-				<div class="col-md-12 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Projects</h1>
-					<h2 class="mb-4">My Projects</h2>
-					<p>Greatest masterpieces.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-6">
-					<div class="project img ftco-animate d-flex justify-content-center align-items-center"
-						style="background-image: url(images/business-website.png);">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="https://khinemyaezin.com/projects/business-website" class="text-decoration-none">Business Website</a></h3>
-							<span>CMS</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="project comming-soon img ftco-animate d-flex justify-content-center align-items-center">
-						<div class="overlay"></div>
-						<div class="text text-center p-4">
-							<h3><a href="#" class="text-decoration-none">Comming Soon</a></h3>
-							<span>Ecommerce</span>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
-	<section id="contact-section" class="ftco-section contact-section ftco-no-pb">
-		<div class="container">
-			<div class="row justify-content-center mb-5 pb-3">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Contact</h1>
-					<h2 class="mb-4">Contact Me</h2>
-					<p>Let's make something great</p>
-				</div>
-			</div>
+		</section>
+		<section class="section work pt-0" id="about-section">
 			<div class="container">
-				<div class="row mb-5">
-					<div class="col-md">
-						<p>Prolific, full stack developer with a passion for
-							technology with 2+ years industry experience in java
-							software development. Highly skilled in
-							implementing core backend development tasks
-							including REST API, proficiency in software
-							development life cycle and agile development
-							methodology. </p>
-						<p>Feel free to reach out through any platforms bellow:</p>
+				<div class="row justify-content-center py-5 mt-5">
+					<div class="col col-md-12 heading-section text-center" data-aos="zoom-in-down">
+						<h1 class="big big-2">EXP</h1>
+						<h2 class="mb-4">Where I've worked</h2>
+						<p>My recent working history.</p>
+					</div>
+				</div>
+				<div class="work-container">
+					<div class="accordion">
+						<div class="accordion-item">
+							<div class="accordion-header" id="myanmar-information-technology-header">
+								<div class="accordion-button flex-column justify-content-start" type="button" data-bs-toggle="collapse"
+									data-bs-target="#myanmar-information-technology" aria-expanded="true"
+									aria-controls="myanmar-information-technology">
+									<div class="w-100 role">Developer <span class="hightlight ms-3">@ MyanmarInformationTechnology</span></div>
+									<span class="w-100 duration">2019 - 2022</span>
+								</div>
+							</div>
+							<div id="myanmar-information-technology" class="accordion-collapse collapse show"
+								aria-labelledby="myanmar-information-technology"
+								data-bs-parent="#myanmar-information-technology-header">
+								<div class="accordion-body">
+									<ul class="list-unstyled ps-3">
+										<li>
+											<span></span>
+											<p>Developed and maintained retail point of sale
+												system by reducing code complexity and
+												processing time.</p>
+										</li>
+										<li>
+											<span></span>
+											<p>Responsible for the administration of database
+												transaction issues at client site.</p>
+										</li>
+										<li>
+											<span></span>
+											<p>Successfully designed and executed efficient and
+												high-performance retail, delivery and survey
+												applications from scratch using Java/EE and
+												Angular in an agile team.</p>
+										</li>
+										<li>
+											<span></span>
+											<p>Conducted API design with BAPIs sap to
+												applications.</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 
 					</div>
 				</div>
+			</div>
+		</section>
+
+
+
+
+		<section class="section project" id="projects-section">
+			<div class="container">
+				<div class="row justify-content-center pb-5">
+					<div class="col-md-12 heading-section text-center" data-aos="zoom-in-down">
+						<h1 class="big big-2">Projects</h1>
+						<h2 class="mb-4">Some Things I’ve Built</h2>
+						<p>Greatest masterpieces.</p>
+					</div>
+				</div>
+				<ul class="project-container">
+					<li class="feature-project">
+						<div class="project-content">
+							<div>
+								<p class="project-overline">Featured Project</p>
+								<h3 class="project-title">CMS website</h3>
+								<div class="project-description  rounded">
+									<p>Website using Laravel, pure js as front-end with Bootstrap. Provide with admin
+										dashboard and customize themes.
+									</p>
+								</div>
+								<ul class="project-language-list">
+									<li>Laravel</li>
+									<li>Bootstrap</li>
+								</ul>
+								<div class="project-links">
+									<a href="" aria-label="GitHub Link" rel="noopener noreferrer" target="_blank">
+										<i class="bi bi-github"></i>
+									</a>
+									<a href="https://khinemyaezin.com/projects/business-website"
+										aria-label="External Link" class="external" rel="noopener noreferrer"
+										target="_blank">
+										<i class="bi bi-box-arrow-up-right"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="project-image" data-aos="zoom-out-right">
+							<div class="image-wrapper img">
+								<picture>
+									<img data-main-image src="images/business-website.png">
+								</picture>
+							</div>
+						</div>
+					</li>
+					<li class="feature-project">
+						<div class="project-content ">
+							<div>
+								<p class="project-overline">Featured Project</p>
+								<h3 class="project-title">Ecommerce</h3>
+								<div class="project-description  rounded">
+									<p>Comming Soon
+									</p>
+								</div>
+								<ul class="project-language-list">
+									<li>Laravel</li>
+									<li>Bootstrap</li>
+									<li>Angular</li>
+								</ul>
+								<div class="project-links">
+									<a href="" aria-label="GitHub Link" rel="noopener noreferrer" target="_blank">
+										<i class="bi bi-github"></i>
+									</a>
+									<a href="" aria-label="External Link" class="external" rel="noopener noreferrer"
+										target="_blank">
+										<i class="bi bi-box-arrow-up-right"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="project-image" data-aos="zoom-out-left">
+							<div class="image-wrapper img">
+								<picture>
+									<img data-main-image src="images/business-website.png">
+								</picture>
+							</div>
+						</div>
+					</li>
+				</ul>
 
 			</div>
-			<div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 contact-info mb-5 justify-content-center">
-				<div class="col d-flex ftco-animate">
-					<a href="tel://+959795957915" class="w-100 d-block text-decoration-none">
-						<div class="align-self-stretch box p-4 text-center">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<i class="bi bi-telephone-fill"></i>
-							</div>
-							<h3 class="mb-4">Contact Number</h3>
-							<p class="contact-value">+95 9795957915</p>
-						</div>
-					</a>
-				</div>
-				<div class="col d-flex ftco-animate">
-					<a href="mailto:hello@khinemyaezin.com" class="w-100 d-block text-decoration-none">
-						<div class="align-self-stretch box p-4 text-center ">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<i class="bi bi-send-fill"></i>
-							</div>
-							<h3 class="mb-4">Email Address</h3>
-							<p class="contact-value">hello@khinemyaezin.com</p>
-						</div>
-					</a>
-				</div>
-
-				<div class="col d-flex ftco-animate">
-					<a href="https://www.linkedin.com/in/khinemyaezin/" class="w-100 d-block text-decoration-none">
-						<div class="align-self-stretch box p-4 text-center">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<i class="bi bi-linkedin"></i>
-							</div>
-							<h3 class="mb-4">Linkin</h3>
-							<p class="contact-value">in/khinemyaezin</p>
-						</div>
-					</a>
-				</div>
-				<div class="col d-flex ftco-animate">
-					<a href="https://api.whatsapp.com/send?phone=959795957915" class="w-100 d-block text-decoration-none">
-						<div class="align-self-stretch box p-4 text-center">
-							<div class="icon d-flex align-items-center justify-content-center">
-								<i class="bi bi-whatsapp"></i>
-							</div>
-							<h3 class="mb-4">whatsapp</h3>
-							<p class="contact-value">+95 9795957915</p>
-						</div>
-					</a>
-				</div>
 
 			</div>
-		</div>
-	</section>
+		</section>
+		<section class="section contact pb-0" id="contact-section">
+			<div class="container">
+				<div class="row justify-content-center mb-5 pb-3">
+					<div class="col-md-7 heading-section text-center" data-aos="zoom-in-down">
+						<h1 class="big big-2">Contact</h1>
+						<h2 class="mb-4">Get In Touch</h2>
+						<p>Let's make something great</p>
+					</div>
+				</div>
+				<div class="py-5">
+					<h3>
+						I occasionally take on job opportunities.
+					</h3>
+					<div class="row row-cols-1 contact-info mb-5 justify-content-center">
+						<!-- <div class="col d-flex ftco-animate">
+						<a href="tel://+959795957915" class="w-100 d-block text-decoration-none">
+							<div class="align-self-stretch box p-4 text-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<i class="bi bi-telephone-fill"></i>
+								</div>
+								<h3 class="mb-4">Contact Number</h3>
+								<p class="contact-value">+95 9795957915</p>
+							</div>
+						</a>
+					</div> -->
+						<div class="col d-flex ftco-animate justify-content-center py-3">
+							<a href="mailto:hello@khinemyaezin.com" class="d-block text-decoration-none">
+								<!-- <div class="align-self-stretch box p-4 text-center ">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<i class="bi bi-send-fill"></i>
+								</div>
+								
+							</div> -->
+								<a href="mailto:hello@khinemyaezin.com"
+									class="btn btn-primary btn-outline-primary p-3 ">
+									Connect with me 👋
+								</a>
+							</a>
+						</div>
+
+						<!-- <div class="col d-flex ftco-animate">
+						<a href="https://www.linkedin.com/in/khinemyaezin/" class="w-100 d-block text-decoration-none">
+							<div class="align-self-stretch box p-4 text-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<i class="bi bi-linkedin"></i>
+								</div>
+								<h3 class="mb-4">Linkin</h3>
+								<p class="contact-value">in/khinemyaezin</p>
+							</div>
+						</a>
+					</div>
+					<div class="col d-flex ftco-animate">
+						<a href="https://api.whatsapp.com/send?phone=959795957915"
+							class="w-100 d-block text-decoration-none">
+							<div class="align-self-stretch box p-4 text-center">
+								<div class="icon d-flex align-items-center justify-content-center">
+									<i class="bi bi-whatsapp"></i>
+								</div>
+								<h3 class="mb-4">whatsapp</h3>
+								<p class="contact-value">+95 9795957915</p>
+							</div>
+						</a>
+					</div> -->
+
+					</div>
+				</div>
+			</div>
+		</section>
 
 
-	<footer class="ftco-footer ftco-section">
+	</main>
+
+
+	<footer class="section">
 		<div class="container">
-
 			<div class="row">
 				<div class="col-md-12 text-center">
-
-					<p>
+					<p class="text-muted small">
 						Copyright &copy;
-						<script>document.write(new Date().getFullYear());</script> All rights reserved
+						<script>document.write(new Date().getFullYear());</script> Designed by @KMZ
 					</p>
 				</div>
 			</div>
-			<ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-				<li class="ftco-animate">
-					<a href="https://www.linkedin.com/in/khinemyaezin">
-						<span class="icon-linkedin-square"></span>
-					</a>
-				</li>
-				<li class="ftco-animate">
-					<a href="https://api.whatsapp.com/send?phone=959795957915">
-						<span class="icon-whatsapp"></span>
-					</a>
-				</li>
-			</ul>
 		</div>
 
 	</footer>
