@@ -11517,14 +11517,15 @@ p {
   font-weight: 700;
   color: rgb(95, 171, 247);
   letter-spacing: -5px;
-  -webkit-animation: flip 5s infinite;
-          animation: flip 5s infinite;
+  -webkit-animation: flip 5s normal;
+          animation: flip 5s normal;
   -webkit-animation-delay: calc(0.2s * var(--i));
           animation-delay: calc(0.2s * var(--i));
 }
-@media (max-width: 575.98px) {
+@media (max-width: 767.98px) {
   .hero .home-item .home-text h1.wavity .wavity-item, .hero .home-item .home-text .wavity.h1 .wavity-item {
     font-size: 40px !important;
+    letter-spacing: -3px;
   }
 }
 .hero .home-item .home-text p {
@@ -11581,8 +11582,8 @@ p {
   z-index: 2;
 }
 .wave.wave1 {
-  -webkit-animation: animate 30s linear infinite;
-          animation: animate 30s linear infinite;
+  -webkit-animation: animate 30s linear normal;
+          animation: animate 30s linear normal;
   z-index: 1000;
   opacity: 1;
   -webkit-animation-delay: 0s;
@@ -11591,8 +11592,8 @@ p {
   margin-bottom: -5px;
 }
 .wave.wave2 {
-  -webkit-animation: animate2 15s linear infinite;
-          animation: animate2 15s linear infinite;
+  -webkit-animation: animate2 15s linear normal;
+          animation: animate2 15s linear normal;
   z-index: 999;
   opacity: 0.5;
   -webkit-animation-delay: -5s;
@@ -11600,8 +11601,8 @@ p {
   bottom: 10px;
 }
 .wave.wave3 {
-  -webkit-animation: animate3 30s linear infinite;
-          animation: animate3 30s linear infinite;
+  -webkit-animation: animate3 30s linear normal;
+          animation: animate3 30s linear normal;
   z-index: 998;
   opacity: 0.2;
   -webkit-animation-delay: 2s;
@@ -11609,8 +11610,8 @@ p {
   bottom: 15px;
 }
 .wave.wave4 {
-  -webkit-animation: animate2 5s linear infinite;
-          animation: animate2 5s linear infinite;
+  -webkit-animation: animate2 5s linear normal;
+          animation: animate2 5s linear normal;
   z-index: 997;
   opacity: 0.7;
   -webkit-animation-delay: -5s;
@@ -11845,6 +11846,15 @@ button.button:hover:before {
   overflow: hidden;
   padding: 0 10px;
 }
+.work ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+@media (max-width: 767.98px) {
+  .work ul {
+    padding-left: 0;
+  }
+}
 .work ul li {
   display: flex;
 }
@@ -11873,6 +11883,11 @@ button.button:hover:before {
   height: 100%;
   z-index: 400;
 }
+@media (max-width: 767.98px) {
+  .work .accordion::before {
+    display: none;
+  }
+}
 .work .accordion-item {
   background-color: transparent;
 }
@@ -11889,11 +11904,21 @@ button.button:hover:before {
   margin-top: 10px;
   z-index: 400;
 }
+@media (max-width: 767.98px) {
+  .work .accordion-item::before {
+    display: none;
+  }
+}
 .work .accordion-button {
   background-color: transparent;
   color: rgb(149, 162, 175);
   text-transform: none !important;
   padding: 0px 2rem;
+}
+@media (max-width: 767.98px) {
+  .work .accordion-button {
+    padding: 0px;
+  }
 }
 .work .accordion-button .role {
   font-size: 1.25rem;
@@ -11906,6 +11931,12 @@ button.button:hover:before {
   color: rgb(149, 162, 175);
   position: absolute;
   right: 0px;
+}
+@media (max-width: 767.98px) {
+  .work .accordion-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 .work .accordion-body p {
   margin: 0px;
@@ -11921,7 +11952,7 @@ button.button:hover:before {
 }
 @media (max-width: 767.98px) {
   .project .project-container {
-    gap: 2rem;
+    gap: 1rem;
   }
 }
 
@@ -11999,6 +12030,13 @@ button.button:hover:before {
     z-index: 2;
   }
 }
+.feature-project .project-content .project-overline {
+  color: rgb(95, 171, 247);
+  margin-bottom: 0rem;
+}
+.feature-project .project-content .project-title {
+  color: rgb(149, 162, 175);
+}
 .feature-project .project-content .project-description {
   box-shadow: 0 10px 30px -15px #232931;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -12009,6 +12047,7 @@ button.button:hover:before {
   background-color: rgb(36, 69, 102);
   opacity: 1;
   color: rgb(149, 162, 175);
+  border-radius: 1rem !important;
 }
 @media (max-width: 767.98px) {
   .feature-project .project-content .project-description {
@@ -12025,10 +12064,17 @@ button.button:hover:before {
   position: relative;
   z-index: 2;
   margin: 25px 0px 10px;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 0px;
   list-style: none;
   font-family: "Ubuntu Mono", monospace;
+}
+.feature-project .project-content .project-language-list li {
+  padding: 5px 1rem;
+  border-radius: 50rem;
+  background-color: rgb(36, 69, 102);
+  text-align: center;
+  font-size: 0.875rem;
 }
 .feature-project .project-content .project-links {
   display: flex;
@@ -12197,6 +12243,7 @@ footer .social i {
 .heading-section h2, .heading-section .h2 {
   font-size: 50px;
   font-weight: 700;
+  color: rgb(149, 162, 175);
 }
 .heading-section h2 span, .heading-section .h2 span {
   font-weight: 400;
