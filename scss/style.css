@@ -11011,6 +11011,7 @@ body.menu-show {
 }
 
 a {
+  text-decoration: none;
   transition: 0.3s all ease;
   color: rgb(95, 171, 247);
 }
@@ -11045,15 +11046,20 @@ p {
   font-size: 2.5rem;
 }
 
-.hightlight {
+.highlight {
   color: rgb(95, 171, 247);
 }
 
+.gradient {
+  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
 .blur {
-  box-shadow: inset 0 0 2px rgba(254, 254, 254, 0.8196078431);
   -webkit-backdrop-filter: saturate(200%) blur(30px);
   backdrop-filter: saturate(200%) blur(30px);
-  background-color: hsla(0deg, 0%, 100%, 0.8) !important;
 }
 
 @media (min-width: 768px) {
@@ -11661,7 +11667,7 @@ button:focus {
 }
 .btn.btn-primary,
 button.btn-primary {
-  background: linear-gradient(90deg, rgb(251, 179, 63) 0%, rgb(252, 247, 70) 100%);
+  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
   border: 1px solid rgb(95, 171, 247) !important;
   color: #000000 !important;
 }
@@ -12044,19 +12050,24 @@ button.button:hover:before {
   z-index: 2;
   padding: 25px;
   border-radius: 4px;
-  background-color: rgb(36, 69, 102);
+  background-color: rgba(36, 69, 102, 0.7);
   opacity: 1;
-  color: rgb(149, 162, 175);
   border-radius: 1rem !important;
+  -webkit-backdrop-filter: saturate(200%) blur(30px);
+  backdrop-filter: saturate(200%) blur(30px);
 }
 @media (max-width: 767.98px) {
   .feature-project .project-content .project-description {
     background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
     opacity: 1;
     box-shadow: none;
     padding: 0rem;
-    color: rgb(149, 162, 175);
   }
+}
+.feature-project .project-content .project-description p {
+  color: rgb(180, 197, 214);
 }
 .feature-project .project-content .project-language-list {
   display: flex;
@@ -12114,14 +12125,14 @@ button.button:hover:before {
   inset: 0px;
   z-index: 3;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-  background-color: rgba(13, 110, 253, 0.25);
+  background-color: rgba(36, 69, 102, 0.7);
   mix-blend-mode: screen;
 }
 @media (max-width: 767.98px) {
   .feature-project .project-image::before {
     opacity: 0.15;
-    -webkit-backdrop-filter: saturate(200%) blur(20px);
-    backdrop-filter: saturate(200%) blur(20px);
+    -webkit-backdrop-filter: saturate(200%) blur(30px);
+    backdrop-filter: saturate(200%) blur(30px);
   }
 }
 .feature-project .project-image .img {
@@ -12301,9 +12312,6 @@ footer .social i {
   font-size: 17px;
 }
 .contact h3, .contact .h3 {
-  background: linear-gradient(271deg, #a0e9ff 30%, #a162e8 50%, #f093b0 70%, #edca85 94%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
   text-align: center;
 }
 

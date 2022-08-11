@@ -11,12 +11,17 @@ $darken: #232931;
 $primary: rgb(95 171 247);
 $primary-overlay: rgba(95, 171, 247, 0.5);
 $primary-light: rgb(149 162 175);
-$background: rgb(36 69 102);
+$primary-lighter: rgb(180, 197, 214);
+
+$background: rgba(36, 69, 102);
+$background-blur: rgba(36, 69, 102, 0.7);
 $background-dark: rgb(7 15 22);
 $primary-linear-background: linear-gradient(
-  90deg,
-  rgba(251, 179, 63, 1) 0%,
-  rgba(252, 247, 70, 1) 100%
+  271deg,
+  #a0e9ff 30%,
+  #a162e8 50%,
+  #f093b0 70%,
+  #edca85 94%
 );
 
 $secondary: #08fdd8;
@@ -55,6 +60,7 @@ body {
   }
 }
 a {
+  text-decoration: none;
   transition: 0.3s all ease;
   color: $primary;
   &:hover,
@@ -86,14 +92,20 @@ p {
   margin: 0.25rem;
   font-size: 2.5rem;
 }
-.hightlight {
+.highlight {
   color: $primary;
 }
+.gradient {
+  background: $primary-linear-background;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
 .blur {
-  box-shadow: inset 0 0 2px #fefefed1;
+  //box-shadow: inset 0 0 2px #fefefed1;
   -webkit-backdrop-filter: saturate(200%) blur(30px);
   backdrop-filter: saturate(200%) blur(30px);
-  background-color: hsla(0, 0%, 100%, 0.8) !important;
+  // background-color: hsla(0, 0%, 100%, 0.8) !important;
 }
 
 // LAYOUT
@@ -106,7 +118,6 @@ main {
   }
   @include media-breakpoint-down(sm) {
     padding: 0px;
-    
   }
 }
 .left {
@@ -886,8 +897,6 @@ button {
     object-fit: contain;
     max-height: 400px;
   }
-  
- 
 }
 
 // WORK
@@ -942,7 +951,6 @@ button {
         display: none;
       }
     }
-    
   }
   .accordion-item {
     background-color: transparent;
@@ -985,7 +993,7 @@ button {
       right: 0px;
     }
   }
-  .accordion-body{
+  .accordion-body {
     @include media-breakpoint-down(md) {
       padding-left: 0;
       padding-right: 0;
@@ -994,7 +1002,6 @@ button {
       margin: 0px;
     }
   }
-
 }
 
 // PROJECTS
@@ -1080,7 +1087,6 @@ button {
       padding: 2rem;
       text-align: left;
       z-index: 2;
-      
     }
     .project-overline {
       color: $primary;
@@ -1096,17 +1102,23 @@ button {
       z-index: 2;
       padding: 25px;
       border-radius: 4px;
-      background-color: $background;
+      background-color: $background-blur;
       opacity: 1;
-      color: $primary-light;
       border-radius: 1rem !important;
+      -webkit-backdrop-filter: saturate(200%) blur(30px);
+      backdrop-filter: saturate(200%) blur(30px);
 
       @include media-breakpoint-down(md) {
         background-color: transparent;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
         opacity: 1;
         box-shadow: none;
         padding: 0rem;
-        color: $primary-light;
+      }
+
+      p {
+        color: $primary-lighter;
       }
     }
     .project-language-list {
@@ -1173,15 +1185,13 @@ button {
       inset: 0px;
       z-index: 3;
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
-      background-color: rgb(13 110 253 / 25%);
+      background-color: rgba(36, 69, 102, 0.7);
       mix-blend-mode: screen;
 
       @include media-breakpoint-down(md) {
         opacity: 0.15;
-        //box-shadow: inset 0 0 2px #fefefed1;
-        -webkit-backdrop-filter: saturate(200%) blur(20px);
-        backdrop-filter: saturate(200%) blur(20px);
-        //background-color: hsla(0, 0%, 100%, 0.8) !important;
+        -webkit-backdrop-filter: saturate(200%) blur(30px);
+        backdrop-filter: saturate(200%) blur(30px);
       }
     }
 
@@ -1373,15 +1383,9 @@ footer {
     }
   }
   h3 {
-    background: linear-gradient(
-      271deg,
-      #a0e9ff 30%,
-      #a162e8 50%,
-      #f093b0 70%,
-      #edca85 94%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    // background: $primary-linear-background;
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
     text-align: center;
   }
 }
