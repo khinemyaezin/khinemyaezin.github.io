@@ -9,6 +9,20 @@ require.context("../assets", false, /\.(png|jpe?g)$/i);
 const projects = [
   {
     title: "Featured Project",
+    subtitle: "Cable Detection",
+    desc: "Cable Detection Service landing website.",
+    published_year:'Nov 2022',
+    languages: ["Javascript with Jquery","Firebase", "Bootstrap"],
+    links: [
+      {
+        url: "https://cabledetection.netlify.app",
+        icon: "box-arrow-up-right",
+      },
+    ],
+    imgSrc: "assets/cabledetection.png",
+  },
+  {
+    title: "Featured Project",
     subtitle: "Business website",
     desc: "Website using Laravel, pure js as front-end with Bootstrap. Provide with admin dashboard and customizable themes.",
     published_year:'2022',
