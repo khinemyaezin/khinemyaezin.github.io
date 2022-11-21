@@ -29,11 +29,11 @@ const projects = [
     languages: ["Laravel", "Jquery", "Bootstrap"],
     links: [
       {
-        url: "https://github.com/khinemyaezin/dynamic_business_website",
+        url: "https://github.com/khinemyaezin/Jupitor",
         icon: "github",
       },
       {
-        url: "https://khinemyaezin.com/projects/business-website",
+        url: "https://khinemyaezin.com/Jupitor/",
         icon: "box-arrow-up-right",
       },
     ],
