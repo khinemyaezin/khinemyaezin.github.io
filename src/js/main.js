@@ -9,17 +9,17 @@ require.context("../assets", false, /\.(png|jpe?g)$/i);
 const projects = [
   {
     title: "Featured Project",
-    subtitle: "Cable Detection",
-    desc: "Cable Detection Service landing website.",
+    subtitle: "Cable Locator",
+    desc: "Cable Detection Service landing website with ability to submit quote requests and control by admin page.",
     published_year:'Nov 2022',
     languages: ["Javascript with Jquery","Firebase", "Bootstrap"],
     links: [
       {
-        url: "https://cabledetection.netlify.app",
+        url: "https://cablelocator.net",
         icon: "box-arrow-up-right",
       },
     ],
-    imgSrc: "assets/cabledetection.png",
+    imgSrc: "assets/cablelocator.png",
   },
   {
     title: "Featured Project",

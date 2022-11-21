@@ -9,7 +9,7 @@ module.exports = {
   entry: {
    app:"./src/js/main.js"
   },
-  devtool: "inline-source-map",
+  //devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },
@@ -22,7 +22,7 @@ module.exports = {
       title: "Home",
       filename: "index.html",
       template: "src/index.html",
-      //favicon: "src/assets/favicon.ico",
+      favicon: "src/assets/favicon.ico",
       scriptLoading: "module",
       chunks: ["app"],
     })
