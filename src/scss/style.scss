@@ -1,4 +1,3 @@
-
 $font-primary: "Inter", sans-serif;
 
 $white: #fff;
@@ -26,8 +25,8 @@ $secondary: #08fdd8;
 @import "../scss/animate.css";
 @import "~aos/dist/aos.css";
 @import "../scss/typewriter.css";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Monoton&display=swap');
-@import '~bootstrap/scss/bootstrap.scss';
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Monoton&display=swap");
+@import "~bootstrap/scss/bootstrap.scss";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 @mixin border-radius($radius) {
@@ -970,7 +969,6 @@ button {
   }
 }
 
-
 // TROGGLE MENU ANIMATION
 .menu {
   background-color: transparent;
@@ -1580,4 +1578,75 @@ footer {
   to {
     transform: rotate3d(0deg);
   }
+}
+.cube-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  z-index: 2;
+}
+
+.cube {
+  position: absolute;
+  top: 80vh;
+  left: 45vw;
+  width: 10px;
+  height: 10px;
+  border: solid 1px darken(#0040c1, 8%);
+  transform-origin: top left;
+  transform: scale(0) rotate(0deg) translate(-50%, -50%);
+  animation: cube 12s ease-in forwards infinite;
+
+  &:nth-child(2n) {
+    border-color: lighten(#0040c1, 10%);
+  }
+
+  &:nth-child(2) {
+    animation-delay: 2s;
+    left: 25vw;
+    top: 40vh;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 4s;
+    left: 75vw;
+    top: 50vh;
+  }
+
+  &:nth-child(4) {
+    animation-delay: 6s;
+    left: 90vw;
+    top: 10vh;
+  }
+
+  &:nth-child(5) {
+    animation-delay: 8s;
+    left: 10vw;
+    top: 85vh;
+  }
+
+  &:nth-child(6) {
+    animation-delay: 10s;
+    left: 50vw;
+    top: 10vh;
+  }
+}
+
+@keyframes cube {
+  from {
+    transform: scale(0) rotate(0deg) translate(-50%, -50%);
+    opacity: 1;
+  }
+  to {
+    transform: scale(20) rotate(960deg) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+canvas {
+  position: fixed;
+  top: 0px;
 }

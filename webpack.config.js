@@ -7,7 +7,7 @@ const devMode = false;
 module.exports = {
   mode: "development",
   entry: {
-   app:"./src/js/main.js"
+   app:"./src/js/index.js"
   },
   //devtool: "inline-source-map",
   devServer: {
