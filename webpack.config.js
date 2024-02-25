@@ -7,7 +7,7 @@ const devMode = false;
 module.exports = {
   mode: "development",
   entry: {
-   app:"./src/js/index.js"
+    app: "./src/js/index.js",
   },
   //devtool: "inline-source-map",
   devServer: {
@@ -25,7 +25,7 @@ module.exports = {
       favicon: "src/assets/favicon.ico",
       scriptLoading: "module",
       chunks: ["app"],
-    })
+    }),
   ].concat(devMode ? [] : [new MiniCssExtractPlugin()]),
   module: {
     rules: [
@@ -78,7 +78,7 @@ module.exports = {
   output: {
     filename: "[name].bundle.js",
     path: path.resolve(__dirname, "dist"),
-    publicPath: '',
+    publicPath: "",
     assetModuleFilename: "assets/[name][ext]",
     clean: true,
   },

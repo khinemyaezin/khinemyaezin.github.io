@@ -34,18 +34,18 @@ export default class SpaceAnimation {
         this.mouseY = this.centerY;
         this.initParticles();
 
-        document.addEventListener('mousemove', (e) => {
-            this.mouseX = e.clientX;
-            this.mouseY = e.clientY;
-        }, false);
+        // document.addEventListener('mousemove', (e) => {
+        //     this.mouseX = e.clientX;
+        //     this.mouseY = e.clientY;
+        // }, false);
 
-        document.addEventListener('mousedown', (e) => {
-            this.targetSpeed = this.BOOST_SPEED;
-        }, false);
+        // document.addEventListener('mousedown', (e) => {
+        //     this.targetSpeed = this.BOOST_SPEED;
+        // }, false);
 
-        document.addEventListener('mouseup', (e) => {
-            this.targetSpeed = this.DEFAULT_SPEED;
-        }, false);
+        // document.addEventListener('mouseup', (e) => {
+        //     this.targetSpeed = this.DEFAULT_SPEED;
+        // }, false);
 
         setInterval(this.loop.bind(this), 1000 / 60);
     }

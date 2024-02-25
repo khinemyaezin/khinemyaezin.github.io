@@ -7,7 +7,7 @@ $darken: #232931;
 $primary: rgb(95 171 247);
 $primary-overlay: rgba(95, 171, 247, 0.5);
 $primary-light: rgb(149 162 175);
-$primary-lighter: rgb(180, 197, 214);
+$primary-lighter: rgb(161, 189, 216);
 
 $background: rgba(36, 69, 102);
 $background-blur: rgba(36, 69, 102, 0.7);
@@ -558,7 +558,7 @@ main {
             left: 0;
             transform: translateY(-50%);
             right: 0;
-            max-width: 50%;
+            max-width: 70%;
             padding-left: 45px;
             padding-right: 3em;
           }
@@ -568,8 +568,9 @@ main {
         color: $primary-light;
         font-weight: 400;
         font-size: clamp(15px, 5vw, 18px);
-        letter-spacing: 3px;
+        //letter-spacing: 3px;
         position: relative;
+        font-family: "Ubuntu Mono", monospace;
       }
       .text {
         position: relative;
@@ -606,7 +607,7 @@ main {
       }
       .job {
         color: $primary-light;
-        font-weight: 700;
+        //font-weight: 700;
       }
     }
   }
@@ -1306,7 +1307,7 @@ footer {
     left: 0;
     font-size: 7vw;
     color: rgba(255, 255, 255, 0.1);
-    z-index: -1;
+    z-index: 1200;
     font-family: "Monoton", cursive;
 
     &.big-2 {

@@ -133,7 +133,10 @@ class Portfolio {
     this.menu();
     this.scrollWindow();
     new TextType(document.querySelector(".typewrite-v2"), [
-      "I build crazy things",
+      "Data Whisperer.",
+      "Code Conjurer.",
+      "Backend Enchanter.",
+      "Data Dynamo."
     ]);
     this.prepareProjects();
     this.runAos();
