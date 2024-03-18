@@ -1651,3 +1651,30 @@ canvas {
   position: fixed;
   top: 0px;
 }
+
+.box-container {
+  box-shadow: 0 10px 30px -15px $darken;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  border-radius: 4px;
+  background-color: $background-blur;
+  opacity: 1;
+  border-radius: 1rem !important;
+  -webkit-backdrop-filter: saturate(200%) blur(30px);
+  backdrop-filter: saturate(200%) blur(30px);
+
+  @include media-breakpoint-down(md) {
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    opacity: 1;
+    box-shadow: none;
+    padding: 0rem;
+  }
+
+  p {
+    color: $primary-lighter;
+  }
+}
