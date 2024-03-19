@@ -8,15 +8,20 @@
 </head>
 <canvas id='c'></canvas>
 
-<body data-bs-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	<!-- <div class="cube-container">
+<body class="wait" data-bs-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	<div id="loader-wrapper" class="">
+		<div class="loader-position">
+			<div class="loader-nature"></div>
+		</div>
+	</div>
+	<div class="cube-container">
 		<div class="cube"></div>
 		<div class="cube"></div>
 		<div class="cube"></div>
 		<div class="cube"></div>
 		<div class="cube"></div>
 		<div class="cube"></div>
-	</div> -->
+	</div>
 	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 		<div class="container">
 			<a class="navbar-brand" href="index.html">KMZ</a>
@@ -47,31 +52,11 @@
 	</nav>
 	<aside class="left">
 		<ul class="list-unstyled social">
-			<li>
-				<a href="https://api.whatsapp.com/send?phone=959795957915" aria-label="whatsapp" target="_blank"
-					rel="noreferrer">
-					<i class="bi bi-whatsapp"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://www.linkedin.com/in/khinemyaezin" aria-label="Linkin" target="_blank" rel="noreferrer">
-					<i class="bi bi-linkedin"></i>
-				</a>
-			</li>
-			<li>
-				<a href="https://github.com/khinemyaezin" aria-label="GitHub" target="_blank" rel="noreferrer">
-					<i class="bi bi-github"></i>
-				</a>
-			</li>
-
 		</ul>
 	</aside>
 	<aside class="right">
-		<ul class="list-unstyled email">
-			<li>
-				<a href="">hello@khinemyaezin.com</a>
-			</li>
-
+		<ul class="list-unstyled">
+			<li><a href="" class="email"></a></li>
 		</ul>
 	</aside>
 	<main class="main">
@@ -110,7 +95,7 @@
 								</h2>
 								<!-- <p>your backend maestro sculpting the invisible gears that power the digital world.</p> -->
 								<p class="py-3">
-									<a href="tel://+959795957915" class="btn btn-primary btn-outline-primary py-3 px-4">
+									<a href="" class="btn btn-primary btn-outline-primary py-3 px-4 phone">
 										Call Me
 									</a>
 								</p>
@@ -135,13 +120,12 @@
 				<div class="row g-3">
 					<div class="col-12 col-lg-6">
 						<div class="ps-lg-5">
-							<img class="img" src="assets/profile.png" alt="">
+							<img class="img" alt="" id="profile_image">
 						</div>
 					</div>
 					<div class="col-12 col-lg-6 d-flex">
 						<div class="align-self-center description">
-							<p class="hero_desc box-container">
-								Hello! I am <span class="highlight">Khine Myae</span>, a software developer with a passion for crafting elegant solutions. I deeply love coding and embrace a relentless curiosity, driving my continuous learning in this ever-evolving field.
+							<p class="hero_desc box-container" id="hero_summary">
 							</p>
 							<p class="hero_desc">
 								Currently, I’m focused on
@@ -152,23 +136,7 @@
 							<div class="row">
 								<div class="col"></div>
 							</div>
-							<ul class="skills-list">
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="100">
-									Java Spring MVC/boot</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="300">
-									C#</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="500">
-									PHP Laravel</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="700">
-									JavaScript</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="900">
-									Angular</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="1200">Bootstrap</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="1400">Ionic</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="1600">Postgresql</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="1800">MySQL</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="2000">MS SQL</li>
-								<li data-aos-once="true" data-aos="flip-left" data-aos-delay="2200">Index DB</li>
+							<ul class="skills-list" id="skill_list">
 							</ul>
 
 						</div>
@@ -216,6 +184,13 @@
 						<p>Let's make something great</p>
 					</div>
 				</div>
+				<!-- <div class="row justify-content-center mb-5 pb-3">
+					<div class="col-md-7">
+						<div class="box-container" >
+							<p id="additional-note-footer"></p>
+						</div>
+					</div>
+				</div> -->
 				<div class="py-5">
 					<h3 class="gradient" data-aos-once="true" data-aos="flip-left">
 						I occasionally take on job opportunities.
@@ -223,11 +198,10 @@
 					<div class="row row-cols-1 contact-info mb-5 justify-content-center">
 
 						<div class="col d-flex ftco-animate justify-content-center py-3">
-							<a href="mailto:hello@khinemyaezin.com" class="d-block text-decoration-none">
+							<a href="" class="d-block text-decoration-none email-btn">
 
-								<a href="mailto:hello@khinemyaezin.com" data-aos-once="true" data-aos="flip-left"
-									data-aos-once="true" data-aos-delay="300"
-									class="btn btn-primary btn-outline-primary p-3 ">
+								<a href="" data-aos-once="true" data-aos="flip-left" data-aos-once="true"
+									data-aos-delay="300" class="btn btn-primary btn-outline-primary p-3 email-btn">
 									Say HI👋
 								</a>
 							</a>
@@ -235,6 +209,8 @@
 
 					</div>
 				</div>
+				
+
 			</div>
 		</section>
 
@@ -244,27 +220,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<ul class="list-unstyled social">
-						<li>
-							<a href="https://api.whatsapp.com/send?phone=959795957915" aria-label="whatsapp"
-								target="_blank" rel="noreferrer">
-								<i class="bi bi-whatsapp"></i>
-							</a>
-						</li>
-						<li>
-							<a href="https://www.linkedin.com/in/khinemyaezin" aria-label="Linkin" target="_blank"
-								rel="noreferrer">
-								<i class="bi bi-linkedin"></i>
-							</a>
-						</li>
-						<li>
-							<a href="https://github.com/khinemyaezin" aria-label="GitHub" target="_blank"
-								rel="noreferrer">
-								<i class="bi bi-github"></i>
-							</a>
-						</li>
-
-					</ul>
+					<ul class="list-unstyled social"></ul>
 				</div>
 				<div class="col-md-12 text-center">
 					<p class="text-muted small">

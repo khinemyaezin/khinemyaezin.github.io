@@ -9,7 +9,7 @@ module.exports = {
   entry: {
     app: "./src/js/index.js",
   },
-  //devtool: "inline-source-map",
+  devtool: "inline-source-map",
   devServer: {
     static: "./dist",
   },

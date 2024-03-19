@@ -27,6 +27,8 @@ $secondary: #08fdd8;
 @import "../scss/typewriter.css";
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&family=Monoton&display=swap");
 @import "~bootstrap/scss/bootstrap.scss";
+@import "../scss/loaders.scss";
+@import "../scss/loader-nature.css";
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
 @mixin border-radius($radius) {
@@ -1588,7 +1590,7 @@ footer {
   height: 100%;
   background-position: center;
   background-size: cover;
-  z-index: 2;
+  z-index: -1;
 }
 
 .cube {
@@ -1676,5 +1678,30 @@ canvas {
 
   p {
     color: $primary-lighter;
+  }
+}
+
+#loader-wrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1300;
+  background-color: $white;
+
+  .loader-position {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
+
+body.wait {
+  #loader-wrapper {
+    display: block;
   }
 }
