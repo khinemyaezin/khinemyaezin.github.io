@@ -1,0 +1,7 @@
+.drop {
+  transition: all 0.5s;
+}
+.drop.active {
+  transform-origin: bottom left;
+  transform: rotate(10deg);
+}/*# sourceMappingURL=drop.css.map */

@@ -1,0 +1,29 @@
+.bar {
+  position: relative;
+  flex: 0.5;
+  text-align: center;
+  transition: all 1s cubic-bezier(0.52, 0.01, 0, 1) 0s, transform 1s cubic-bezier(0.52, 0.01, 0, 1) 0.8s;
+}
+
+.bar.expand {
+  flex-grow: 5;
+}
+
+.bars {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 0%;
+  height: 100%;
+  transition: width 1s;
+}
+.bars.expend {
+  width: 100%;
+}
+
+.backgound-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}/*# sourceMappingURL=bar.css.map */

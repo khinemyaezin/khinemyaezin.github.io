@@ -1,0 +1,19 @@
+.experiences-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.experiences-wrapper .experiences {
+  position: relative;
+  padding-left: 3rem;
+  width: 80%;
+  margin-bottom: -20px;
+}
+
+.exp-card {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}/*# sourceMappingURL=experience.component.css.map */

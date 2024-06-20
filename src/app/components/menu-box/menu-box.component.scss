@@ -1,0 +1,104 @@
+@import "../../../variables.scss";
+
+.bars {
+  position: relative;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  align-items: center;
+  width: 100%;
+  transition: width 1s;
+}
+
+.bar {
+  position: relative;
+  flex: 0.5;
+  overflow: hidden;
+  text-align: center;
+  transition: all 1s cubic-bezier(0.52, 0.01, 0, 1) 0s,
+    transform 1s cubic-bezier(0.52, 0.01, 0, 1) 0.8s;
+}
+
+.bar.expand {
+  flex-grow: 5;
+}
+
+.backgound-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.menu-text {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  .menu-text-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-start;
+    transition: all 1s;
+  }
+
+  &.expend .menu-text-wrapper {
+    transform: translate(-10%, 0);
+  }
+}
+
+.title {
+  font-family: $font-title;
+  font-size: 20vh;
+  margin: 0px;
+  line-height: 0.8;
+}
+
+.title-explore {
+  font-family: $font-title;
+  font-size: 10vh;
+  margin: 0px;
+  line-height: 0.8;
+}
+
+.side-text {
+  transform-origin: 0% 100%;
+  transform: rotate(90deg);
+  top: auto;
+  font-size: 3vh;
+  position: absolute;
+}
+
+.link {
+  font-family: unset;
+  font-size: smaller;
+  visibility: hidden;
+}
+
+.menu-text.expend .link {
+  visibility: visible;
+}
+
+.image {
+  height: 10vh;
+}
+
+.bar {
+  height: 50vh;
+}
+
+.icon-link {
+  transform: translateY(2rem);
+  transition: transform 0.5s;
+}
+
+.bar.expand {
+  .icon-link {
+    transform: translateY(0);
+    transition-delay: 0.5s;
+  }
+}

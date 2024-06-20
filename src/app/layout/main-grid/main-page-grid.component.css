@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 90%;
+  height: 100vh; /* Adjust the height as needed */
+  width: 93vw; /* Adjust the width as needed */
+}
+
+.grid-item.hero {
+  display: flex;
+}
+
+.project-description {
+  flex: 1; /* Take up full height of the cell */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px -15px #1d3557;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  padding: 25px;
+  background-color: rgba(36, 69, 102, 0.7);
+  opacity: 1;
+  -webkit-backdrop-filter: saturate(200%) blur(30px);
+  backdrop-filter: saturate(200%) blur(30px);
+}/*# sourceMappingURL=main-page-grid.component.css.map */

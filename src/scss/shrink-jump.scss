@@ -1,0 +1,26 @@
+.shrink-jump {
+  display: inline-block;
+  user-select: none;
+  line-height: 0.8;
+  cursor: pointer;
+  &.active {
+    animation: shrinkjump 1s ease-in-out;
+    transform-origin: bottom center;
+  }
+}
+
+@keyframes shrinkjump {
+  10%,
+  35% {
+    transform: scale(2, 0.2) translate(0, 0);
+  }
+
+  45%,
+  50% {
+    transform: scale(1) translate(0, -50px);
+  }
+
+  80% {
+    transform: scale(1) translate(0, 0);
+  }
+}

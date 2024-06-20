@@ -1,0 +1,47 @@
+.menu-text {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.menu-text .menu-text-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  transition: all 1s;
+}
+.menu-text.expend .menu-text-wrapper {
+  transform: translate(-10%, 0);
+}
+
+.bars {
+  overflow: hidden;
+}
+
+.bar {
+  overflow: hidden;
+}
+
+.title {
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 20vh;
+  margin: 0px;
+}
+
+.side-text {
+  transform-origin: 0% 100%;
+  transform: rotate(90deg);
+  top: auto;
+  font-size: 3vh;
+  position: absolute;
+  top: 10vh;
+}
+
+.link {
+  font-family: unset;
+  font-size: smaller;
+}/*# sourceMappingURL=menu-box.component.css.map */

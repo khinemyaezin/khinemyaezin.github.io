@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Andika:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+.blinker {
+  position: relative;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.anim-typewriter {
+  animation: blinkTextCursor 1000ms steps(44) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 5rem;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: #f1faee;
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.animate {
+  animation: animate 0.6s cubic-bezier(0.2, 0.6, 0.2, 1);
+  animation-fill-mode: backwards;
+}
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: translateY(30vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}/*# sourceMappingURL=hero-properties.component.css.map */

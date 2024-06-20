@@ -1,3 +1,0 @@
-https://themes.getbootstrap.com/preview/?theme_id=109460
-firebase emulators:start --import C:\Users\khine\Documents\Repository\khinemyaezin.github.io\firestore_exports --export-on-exit C:\Users\khine\Documents\Repository\khinemyaezin.github.io\firestore_exports
-firebase emulators:start --export-on-exit C:\Users\khine\Documents\Repository\khinemyaezin.github.io\firestore_exports
