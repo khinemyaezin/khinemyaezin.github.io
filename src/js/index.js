@@ -5,10 +5,11 @@ import "bootstrap/js/dist/collapse";
 import "bootstrap/js/dist/scrollspy";
 import TextType from "./text-type";
 import { FirebaseInit } from "./utility/firebase";
+import { FirebaseDemo } from "./utility/firebase_demo";
 import { doc, setDoc } from "firebase/firestore";
 
 class Portfolio {
-  firebase = new FirebaseInit();
+  firebase = new FirebaseDemo();
   projects = {};
   workingExp = {};
   about = {};

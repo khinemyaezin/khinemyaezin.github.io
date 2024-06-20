@@ -1,10 +1,8 @@
 import { initializeApp } from "firebase/app";
 import {
-  getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   onAuthStateChanged,
-  connectAuthEmulator,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -21,10 +19,11 @@ import {
   connectFirestoreEmulator,
 } from "firebase/firestore";
 import { getStorage, connectStorageEmulator } from "firebase/storage";
+import { FirebaseInterface } from "../interface/firebaseInterface";
 
 const pageSize = 10;
 
-export class FirebaseInit {
+export class FirebaseInit extends FirebaseInterface{
   // TODO: Replace the following with your app's Firebase project configuration
   firebaseConfig = {
     apiKey: "AIzaSyBEB81N7MfE1zdq4LlI2ooSIyR4d6DRMlQ",
