@@ -35,11 +35,9 @@ export class MovingCardDirective implements AfterViewInit {
     });
 
     this.scroll.scrollChange
-      .pipe(filter((value) => this.visible == true))
+      .pipe(filter((_value) => this.visible == true))
       .subscribe((value: ParallaxScrollValues) => {
         let distance = this.getDistance(value);
-        console.log(distance);
-
         this.moveElement(distance);
       });
   }

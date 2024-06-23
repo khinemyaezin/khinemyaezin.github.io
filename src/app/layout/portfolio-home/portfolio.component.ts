@@ -8,6 +8,7 @@ import { ParallaxTextDirective } from '../../directive/parallax-text.directive';
 import { ExperienceGridComponent } from '../experience-grid/experience-grid.component';
 import { AboutMeGridComponent } from '../about-me-grid/about-me-grid.component';
 import { ContactGridComponent } from '../contact-grid/contact-grid.component';
+import { InterceptionDirective } from '../../directive/interception.directive';
 
 @Component({
   selector: 'app-portfolio',
@@ -21,7 +22,8 @@ import { ContactGridComponent } from '../contact-grid/contact-grid.component';
     MainPageGridComponent,
     ExperienceGridComponent,
     AboutMeGridComponent,
-    ContactGridComponent
+    ContactGridComponent,
+    InterceptionDirective
   ],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.scss',

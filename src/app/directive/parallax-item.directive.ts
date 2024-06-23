@@ -5,25 +5,25 @@ import {
   Input,
   OnInit,
   Renderer2,
-} from '@angular/core';
+} from "@angular/core";
 import {
   ParallaxScrollDirective,
   ParallaxScrollValues,
-} from './parallax-scroll.directive';
+} from "./parallax-scroll.directive";
 
 @Directive({
-  selector: '[parallaxItem]',
+  selector: "[parallaxItem]",
   standalone: true,
   host: {
-    class: 'parallax-image',
+    class: "parallax-image",
   },
 })
 export class ParallaxItemDirective implements OnInit, AfterViewInit {
   @Input() dataDepth: number = 0;
   @Input() initValue: number = 0;
-  @Input() axis: string = 'x';
+  @Input() axis: string = "x";
   @Input() setDefaultPosition: boolean = false;
-  @Input() direction: string = 'right';
+  @Input() direction: string = "right";
 
   private rect: any;
 
@@ -75,6 +75,6 @@ export class ParallaxItemDirective implements OnInit, AfterViewInit {
   }
 
   private setTranslateX(element: HTMLElement, value: number) {
-    this.renderer.setStyle(element, 'transform', `translateX(${value}px)`);
+    this.renderer.setStyle(element, "transform", `translateX(${value}px)`);
   }
 }

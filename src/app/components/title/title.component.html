@@ -1,5 +1,5 @@
-<div class="d-flex flex-column h-100 w-100 justify-content-center overflow-hidden" interception>
-    <h4 class="text-black" parallaxItem [setDefaultPosition]="true" [dataDepth]="0" *ngFor="let v of _prefix">{{v}}</h4>
+<div class="d-flex flex-column h-100 w-100 justify-content-center overflow-hidden">
+    <h4 class="text-black" aos [dataDepth]="0.5" *ngFor="let v of _prefix">{{v}}</h4>
     <h1 class="text-black">{{title}}</h1>
-    <h4 class="text-black"  parallaxItem [setDefaultPosition]="true" [dataDepth]="0.3" *ngFor="let v of _suffex">{{v}}</h4>
+    <h4 class="text-black" aos  [dataDepth]="0.8" *ngFor="let v of _suffex">{{v}}</h4>
 </div>

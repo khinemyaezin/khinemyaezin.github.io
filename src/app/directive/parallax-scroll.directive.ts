@@ -12,6 +12,7 @@ import {
 export interface ParallaxScrollValues {
   max: number;
   value: number;
+  scrollValue:number;
 }
 
 @Directive({
@@ -31,6 +32,7 @@ export class ParallaxScrollDirective
   public scVal: ParallaxScrollValues = {
     max: 0,
     value: 0,
+    scrollValue:0
   };
 
   constructor(private el: ElementRef) {}
@@ -69,15 +71,16 @@ export class ParallaxScrollDirective
   @HostListener('wheel', ['$event'])
   onWheel(event: WheelEvent): void {
     event.preventDefault();
-
+  
     const value = this.calculateScrollValues(
       this.el.nativeElement,
       event.deltaY
     );
     this.insertScrollLeft(value);
+    
     this.scVal = value;
 
-    if (this.isReachEdge()) return;
+    if (this.isReachEdge()) return;    
 
     if (!this.ticking) {
       window.requestAnimationFrame(() => {
@@ -96,12 +99,14 @@ export class ParallaxScrollDirective
     scrCont: any,
     scrollValue: number
   ): ParallaxScrollValues {
+    
     const max = scrCont.scrollWidth - scrCont.clientWidth;
     const value = scrCont.scrollLeft + scrollValue;
 
     const scrollValues: ParallaxScrollValues = {
       max: max,
       value: value < 0 ? 0 : value,
+      scrollValue: scrollValue
     };
     return scrollValues;
   }

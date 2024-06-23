@@ -12,7 +12,9 @@ export class BarsDirective implements AfterViewInit {
   private bars: BackgroundBarDirective[] = [];
   private destroy$ = new Subject<void>();
   
-  constructor(private intersection: InterceptionDirective, private el:ElementRef, private render:Renderer2) {
+  constructor(
+    //private intersection: InterceptionDirective
+     private el:ElementRef, private render:Renderer2) {
 
   }
 
@@ -39,16 +41,16 @@ export class BarsDirective implements AfterViewInit {
   }
 
   intersect() {
-    if( this.intersection ) {
-      this.intersection.visible
-      .pipe(
-        filter(value=> value),
-        takeUntil(this.destroy$)
-      )
-      .subscribe(() => {
-        this.render.addClass(this.el.nativeElement, "expend")
-      });
-    }
+    // if( this.intersection ) {
+    //   this.intersection.visible
+    //   .pipe(
+    //     filter(value=> value),
+    //     takeUntil(this.destroy$)
+    //   )
+    //   .subscribe(() => {
+    //     this.render.addClass(this.el.nativeElement, "expend")
+    //   });
+    // }
   }
 
 }

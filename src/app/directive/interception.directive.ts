@@ -3,31 +3,48 @@ import {
   Directive,
   ElementRef,
   EventEmitter,
+  HostListener,
   Input,
   OnDestroy,
-  OnInit,
   Output,
   Renderer2,
-} from '@angular/core';
-import { Subject, debounceTime, takeUntil } from 'rxjs';
+} from "@angular/core";
+import { Subject, filter, takeUntil } from "rxjs";
+import {
+  ParallaxScrollDirective,
+  ParallaxScrollValues,
+} from "./parallax-scroll.directive";
 
 @Directive({
-  selector: '[interception]',
+  selector: "[interception]",
   standalone: true,
 })
 export class InterceptionDirective implements OnDestroy, AfterViewInit {
   @Input() debounceTime = 0; // Optional debounce delay (milliseconds)
+  @Input() name: string = "";
   @Output() visible = new EventEmitter<boolean>();
+  @Output() scrollPercentage = new EventEmitter<{
+    percentage: number;
+    value: number;
+  }>();
 
   private observer: IntersectionObserver | null = null;
   private visibilityChange = new Subject<boolean>();
+  private _visible = false;
   private destroy$ = new Subject<void>();
 
-  constructor(private element: ElementRef, private render: Renderer2) {}
+  constructor(
+    private element: ElementRef,
+    private render: Renderer2,
+    private scroll: ParallaxScrollDirective
+  ) {}
+
   @Input() delay: number = 0;
+
   ngAfterViewInit(): void {
     this.createObserver();
     this.setupDebouncedVisibility();
+    this.listenScrollChanges();
   }
 
   ngOnInit() {}
@@ -36,6 +53,20 @@ export class InterceptionDirective implements OnDestroy, AfterViewInit {
     this.disconnectObserver();
     this.destroy$.next();
     this.destroy$.complete();
+  }
+
+  @HostListener('scroll', ['$event'])
+  onScroll(event: Event): void {
+    event.preventDefault();
+
+   
+  }
+
+  @HostListener('wheel', ['$event'])
+  onWheel(event: WheelEvent): void {
+    event.preventDefault();
+  
+   
   }
 
   private createObserver() {
@@ -58,15 +89,19 @@ export class InterceptionDirective implements OnDestroy, AfterViewInit {
 
   private setupDebouncedVisibility() {
     this.visibilityChange
-      .pipe(debounceTime(this.debounceTime), takeUntil(this.destroy$))
+      .pipe(
+        takeUntil(this.destroy$)
+      )
       .subscribe((isVisible) => {
-        setTimeout(() => {
-          this.visible.emit(isVisible);
-          if (isVisible)
-            this.render.addClass(this.element.nativeElement, 'visible');
-          else this.render.removeClass(this.element.nativeElement, 'visible');
-        }, this.delay);
+        this._visible = isVisible;
+        this.visible.emit(isVisible);
+        this.addVisibility(isVisible);
       });
+  }
+
+  private addVisibility(isVisible: boolean) {
+    if (isVisible) this.render.addClass(this.element.nativeElement, "visible");
+    else this.render.removeClass(this.element.nativeElement, "visible");
   }
 
   private disconnectObserver() {
@@ -74,5 +109,28 @@ export class InterceptionDirective implements OnDestroy, AfterViewInit {
       this.observer.disconnect();
       this.observer = null;
     }
+  }
+
+  private listenScrollChanges() {
+    this.scroll.scrollChange
+      .pipe(
+        takeUntil(this.destroy$),
+        filter(() => this._visible)
+      )
+      .subscribe((value) =>
+        this.calculateScrollPercentageWithinInterseption()
+      );
+  }
+
+  private calculateScrollPercentageWithinInterseption() {
+    const start = this.element.nativeElement.getBoundingClientRect().left;
+    const scrollPercentage = (start / this.element.nativeElement.clientWidth) * 100;
+
+    const output = {
+      percentage: scrollPercentage,
+      value: 0,
+    };
+
+    this.scrollPercentage.emit(output);
   }
 }
