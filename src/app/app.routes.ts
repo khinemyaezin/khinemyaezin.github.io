@@ -1,24 +1,19 @@
 import { Routes } from '@angular/router';
-import { PortfolioPageComponent } from './page/portfolio-page/portfolio-page.component';
-import { PortfolioComponent } from './layout/portfolio-home/portfolio.component';
-import { AboutMeHomeComponent } from './layout/about-me-home/about-me-home.component';
+import { HomeComponent } from './v2/layout/home/home.component';
+import { PortfolioV2Component } from './v2/layout/portfolio-v2/portfolio-v2.component';
 
 export const routes: Routes = [
   {
     path: '',
-    component: PortfolioPageComponent,
+    component: HomeComponent,
     children: [
       {
         path:"", redirectTo:"home", pathMatch:"full"
       },
       {
         path: 'home',
-        component: PortfolioComponent,
-      },
-      {
-        path: 'about',
-        component: AboutMeHomeComponent,
-      },
+        component: PortfolioV2Component
+      }
     ],
   },
 ];

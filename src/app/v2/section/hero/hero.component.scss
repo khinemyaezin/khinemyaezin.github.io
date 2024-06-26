@@ -1,0 +1,35 @@
+@import "../../scss/text-reveal.scss";
+@import "../../../../variables.scss";
+
+#hero{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.hero__container{
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.hero__title{
+    overflow: hidden;
+}
+
+.hero__title__header{
+    font-family: $font-hero;
+    font-size: clamp(2rem, 15cqi, 20rem);
+    // letter-spacing: -.05em;
+    // margin-bottom: 2rem;
+}
+

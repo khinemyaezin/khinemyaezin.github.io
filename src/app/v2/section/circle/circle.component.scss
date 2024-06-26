@@ -1,0 +1,79 @@
+/* Cirlce */
+@import "../../../../variables.scss";
+@import "../../scss/text-reveal.scss";
+
+#circle__section {
+  position: relative;
+  height: 200%;
+  width: 100%;
+}
+
+.circle__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.circle__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: scale(0);
+  width: 150vmax;
+  height: 150vmax;
+}
+
+.circle__sticky h2 {
+  font-size: clamp(2rem, 15cqi, 20rem);
+  z-index: 1;
+}
+
+.circle__sticky.white .circle {
+  background-color: white;
+}
+.circle__sticky.white {
+  color: #161616;
+}
+
+.circle__sticky.black .circle {
+  background-color: #161616;
+}
+.circle__sticky.black {
+  color: white;
+  .circle__container {
+    background-color: white;
+  }
+}
+
+.circle__sticky.info .circle {
+  background-color: $info;
+}
+.circle__sticky.info {
+  color: white;
+  .circle__container {
+    background-color: $danger;
+  }
+}
+
+.circle__sticky.to__black .circle {
+  background-color: #161616;
+}
+.circle__sticky.to__black {
+  color: white;
+  .circle__container {
+    background-color: $info;
+  }
+}

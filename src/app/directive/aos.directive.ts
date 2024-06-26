@@ -43,9 +43,7 @@ export class AosDirective implements AfterViewInit, OnDestroy {
     this.renderer.setStyle(element, "transform", `translateX(${value}%)`);
   }
 
-  setParallax(element: any, value: { percentage: number; value: number }) {
-    console.log(value.percentage);
-    
+  setParallax(element: any, value: { percentage: number; value: number }) {    
     let transform = Math.min(
       -value.percentage * (this.dataDepth > 0 ? this.dataDepth : 1),
       0

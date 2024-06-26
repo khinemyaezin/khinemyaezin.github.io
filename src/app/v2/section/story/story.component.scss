@@ -1,0 +1,71 @@
+@import "../../../../variables.scss";
+
+#about {
+  background-color: white;
+  color: black;
+  margin-top: -5px;
+  margin-bottom: -5px;
+}
+
+.wrapper {
+  max-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: 576px) {
+    max-width: 80%;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 60%;
+  }
+  @media (min-width: 1200px) {
+    max-width: 50%;
+  }
+
+  @media (max-width: 575.98px) {
+    max-width: 80%;
+  }
+}
+.profile-wrapper {
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: auto;
+  right: 0%;
+  background-color: #dfdfdf;
+  padding: 1rem;
+  border-radius: 50%;
+  transform: rotate(351deg);
+}
+.profile-img {
+  height: clamp(1rem, 10cqi, 10rem);
+  object-fit: contain;
+}
+
+.header-mask {
+  margin-bottom: 2vh;
+  padding-top: 5%;
+}
+
+.content {
+  position: relative;
+  p {
+    text-wrap: balance;
+  }
+}
+
+.title {
+  font-size: clamp(1rem, 10cqi, 10rem);
+}
+.seperator {
+  margin-bottom: 10px;
+  width: 35px;
+  height: 3px;
+  background: $primary;
+  border: none;
+}

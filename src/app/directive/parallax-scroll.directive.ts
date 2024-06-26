@@ -62,6 +62,8 @@ export class ParallaxScrollDirective
     if (!this.ticking) {
       window.requestAnimationFrame(() => {
         this.scrollChange.emit(value);
+        console.log(value);
+        
         this.ticking = false;
       });
       this.ticking = true;

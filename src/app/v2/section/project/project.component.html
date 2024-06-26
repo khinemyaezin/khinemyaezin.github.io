@@ -1,0 +1,49 @@
+<section id="projects" intersection>
+    <div class="projects__sticky" #projectSticky>
+        <div class="slider__container">
+            <div class="projects__slider" #projectsSlider>
+                <ng-container *ngFor="let project of projects">
+                    <ng-container *ngTemplateOutlet="projectTemplate,  context: {project : project}"></ng-container>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #projectTemplate let-project="project">
+    <div class="project">
+        <!-- <div class="image__container">
+            <img class="project__image" [src]="project.image">
+
+        </div> -->
+        <div class="feature-project">
+            <div class="project-content">
+                <div>
+                    <p class="project-overline">{{project.title}}</p>
+                    <h5 class="project-title">{{project.subtitle}}</h5>
+                    <div class="project-description">
+                        <p>{{project.desc}}</p>
+                        <div><small>{{project.published_year}}</small></div>
+                    </div>
+                    <ul class="project-language-list">
+                        <li *ngFor="let lan of project.languages">{{lan}}</li>
+                    </ul>
+                    <div class="project-links">
+                        <a *ngFor="let l of project.links" [href]="l.url" aria-label="GitHub Link" rel="noopener noreferrer"
+                            target="_blank">
+                            <i class="bi {{l.icon}}"></i>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="project-image">
+                <div class="image-wrapper img">
+                    <picture>
+                        <img data-main-image="" [src]="project.imgSrc">
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

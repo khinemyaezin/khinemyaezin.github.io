@@ -1,0 +1,25 @@
+<section id="blog" intersection>
+    <div class="blog__hero">
+        <h2 class="text__reveal" textReveal>TIMELINE</h2>
+    </div>
+    <ng-container *ngFor="let value of blogPosts">
+        <ng-container *ngTemplateOutlet="blogTemplate,  context: {data : value}"></ng-container>
+    </ng-container>
+</section>
+
+<ng-template #blogTemplate let-data="data">
+    <div class="blog__post">
+        <div class="post">
+            <div class="post__image__container">
+                <div class="post__body">
+                    <h4 class="title">{{data.title}}</h4>
+                    <div class="seperator"></div>
+                    <p class="fs-6">
+                        {{data.desc}}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</ng-template>

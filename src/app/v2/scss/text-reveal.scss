@@ -1,0 +1,11 @@
+.text__reveal{
+    line-height: 1;
+    overflow: hidden;
+    font-size: clamp(2rem, 15cqi, 20rem);
+}
+
+.text__reveal span{
+    display: inline-block;
+    transform: translateY(110%);
+    transition: .5s;
+}

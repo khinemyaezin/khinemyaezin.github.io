@@ -1,0 +1,60 @@
+/* Discover */
+@import "../../../../variables.scss";
+
+#discover {
+  background-color: $black;
+  height: 100%;
+}
+
+.discover__container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+  color: $secondary;
+}
+.text__group h3 {
+  font-size: clamp(2rem, 3cqi, 20rem);
+}
+.text__group p {
+  color: $secondary;
+  will-change: transform;
+  // width: 80%;
+}
+
+.chonky-underline-violet {
+  z-index: 0;
+  position: relative;
+  text-decoration: none;
+  font-size: 130%;
+  color: $secondary;
+  &:hover::after {
+    height: 1em;
+  }
+}
+
+.text__right a{
+    text-decoration: none;
+    color: $secondary;
+    font-size: 130%;
+}
+
+.chonky-underline-violet::after {
+  transition: all 0.1s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 13.5%;
+  z-index: -1;
+  height: 0.2em;
+  width: 104%;
+  left: -1%;
+  background: linear-gradient(
+    65deg,
+    #257c58 0%,
+    #268576 100%,
+    rgba(255, 209, 0, 0) 100%
+  );
+}
