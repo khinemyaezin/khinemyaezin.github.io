@@ -44,7 +44,7 @@ export class ProjectComponent
       title: "Featured Project",
       desc: "Cable Detection Service landing website with ability to submit quote requests and control by admin page.",
       imgSrc:
-        "https://firebasestorage.googleapis.com/v0/b/khinemyaezin-portfolio.appspot.com/o/cablelocator.png?alt=media&token=3d8edb83-df38-42b1-9459-42d4e960ee5f",
+        "cablelocator.png",
       active: true,
     },
     {
@@ -64,7 +64,7 @@ export class ProjectComponent
       title: "Featured Project",
       desc: 'Developed during transitional period of Zawgyi to Unicode.',
       imgSrc:
-        "https://firebasestorage.googleapis.com/v0/b/khinemyaezin-portfolio.appspot.com/o/unicode-typing-master.png?alt=media&token=06cfb5c9-9e04-4f10-a89e-8f58d56f9bde",
+        "unicode-typing-master.png",
       active: true,
     },
   ];

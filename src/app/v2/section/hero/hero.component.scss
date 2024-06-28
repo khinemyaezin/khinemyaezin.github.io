@@ -24,12 +24,11 @@
 
 .hero__title{
     overflow: hidden;
+
 }
 
 .hero__title__header{
-    font-family: $font-hero;
+    font-family: $font-title;
     font-size: clamp(2rem, 15cqi, 20rem);
-    // letter-spacing: -.05em;
-    // margin-bottom: 2rem;
 }
 

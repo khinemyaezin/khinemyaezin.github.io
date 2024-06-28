@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ParallaxItemDirective } from '../../directive/parallax-item.directive';
 import { InterceptionDirective } from '../../directive/interception.directive';
 import { DropDirective } from '../../directive/drop.directive';
-import { ShrinkjumpDirective } from '../../directive/shrinkjump.directive';
+import { ShrinkjumpDirective } from '../../v2/directive/shrinkjump.directive';
 
 @Component({
   selector: 'app-hero',

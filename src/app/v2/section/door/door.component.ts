@@ -3,17 +3,21 @@ import {
   Component,
   ElementRef,
   OnDestroy,
+  Query,
+  QueryList,
   Renderer2,
   ViewChild,
+  ViewChildren,
 } from "@angular/core";
 import { ScrollEmitterDirective } from "../../directive/scroll-emitter.directive";
 import { IntersectionDirective } from "../../directive/intersection.directive";
 import { Subject, combineLatest, filter, takeUntil } from "rxjs";
+import { ShrinkjumpDirective } from "../../directive/shrinkjump.directive";
 
 @Component({
   selector: "section-door",
   standalone: true,
-  imports: [IntersectionDirective],
+  imports: [IntersectionDirective, ShrinkjumpDirective],
   templateUrl: "./door.component.html",
   styleUrl: "./door.component.scss",
 })
@@ -24,7 +28,9 @@ export class DoorComponent implements AfterViewInit, OnDestroy {
   @ViewChild("textHeaderRight") textHeaderRight!: ElementRef;
   @ViewChild("section") section!: ElementRef;
   @ViewChild("video") video!: ElementRef;
+
   @ViewChild(IntersectionDirective) intersection!: IntersectionDirective;
+  @ViewChildren(ShrinkjumpDirective) shrinks!: QueryList<ShrinkjumpDirective>;
 
   private destroy$ = new Subject<void>();
 
@@ -55,10 +61,14 @@ export class DoorComponent implements AfterViewInit, OnDestroy {
   animateVideo(bottom: number) {
     let scale = 1 - (bottom - window.innerHeight) * 0.0005;
     scale = scale < 0.2 ? 0.2 : scale > 1 ? 1 : scale;
+
+    let rotate  =1 - (bottom - window.innerHeight) * 0.05;
+    rotate = rotate < 0 ? rotate : 0;
+
     this.render.setStyle(
       this.video.nativeElement,
       "transform",
-      `scale(${scale})`
+      `scale(${scale}) rotate(${rotate}deg)`
     );
   }
 
@@ -80,7 +90,7 @@ export class DoorComponent implements AfterViewInit, OnDestroy {
     );
   }
 
-  animateText(bottom:number) {
+  animateText(bottom: number) {
     let textTrans = bottom - window.innerHeight;
     textTrans = textTrans < 0 ? 0 : textTrans;
     this.render.setStyle(
@@ -93,5 +103,16 @@ export class DoorComponent implements AfterViewInit, OnDestroy {
       "transform",
       `translateX(${textTrans}px)`
     );
+    console.log(textTrans);
+
+    if (textTrans == 0) {
+      this.animateShrink();
+    }
+  }
+
+  animateShrink() {
+    this.shrinks.forEach((shrink,index) => {
+      shrink.active.next(index);
+    });
   }
 }

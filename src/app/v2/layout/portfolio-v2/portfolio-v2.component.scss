@@ -28,12 +28,7 @@ html, body{
     overflow: hidden;
 }
 
-.separator{
-    position: absolute;
-    width: 1px;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.149);
-}
+
 
 .separator:nth-child(1){
     left: 25%
@@ -183,7 +178,7 @@ section{
     height: 100%;
 }
 .about__text{
-    width: 45%;
+    width: 100%;
     margin: auto;
     text-align: center;
     text-transform: uppercase;

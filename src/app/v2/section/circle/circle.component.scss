@@ -38,40 +38,15 @@
 
 .circle__sticky h2 {
   font-size: clamp(2rem, 15cqi, 20rem);
+  font-family: $font-title;
   z-index: 1;
 }
 
-.circle__sticky.white .circle {
-  background-color: white;
-}
-.circle__sticky.white {
-  color: #161616;
-}
-
-.circle__sticky.black .circle {
-  background-color: #161616;
-}
-.circle__sticky.black {
-  color: white;
-  .circle__container {
-    background-color: white;
-  }
-}
 
 .circle__sticky.info .circle {
-  background-color: $info;
+  background-color: $black;
 }
 .circle__sticky.info {
-  color: white;
-  .circle__container {
-    background-color: $danger;
-  }
-}
-
-.circle__sticky.to__black .circle {
-  background-color: #161616;
-}
-.circle__sticky.to__black {
   color: white;
   .circle__container {
     background-color: $info;

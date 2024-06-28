@@ -19,13 +19,18 @@
   top: 0;
   max-width: var(--max-width);
   overflow: hidden;
+  
 
   &:nth-child(2) .post {
     background-color: $warning;
   }
   &:nth-child(3) .post {
-    background-color: $danger;
+    background-color: $info;
   }
+}
+
+.text__reveal {
+  font-family: $font-title;
 }
 
 .post {
@@ -54,7 +59,20 @@
   //aspect-ratio: 16 / 9;
 }
 .post__body {
-  width: 70%;
+  @media (min-width: 576px) {
+    width: 80%;
+  }
+
+  @media (min-width: 992px) {
+    width: 70%;
+  }
+  @media (min-width: 1200px) {
+    width: 70%;
+  }
+
+  @media (max-width: 575.98px) {
+    width: 90%;
+  }
 }
 
 .blog__post__img {
@@ -80,10 +98,120 @@
   margin-bottom: 10px;
   width: 35px;
   height: 3px;
-  background: $primary;
+  background: $dark;
   border: none;
 }
 
 .post__body .title {
-  font-size: clamp(2rem, 5cqi, 10rem);
+  font-family: $font-title;
+  font-size: clamp(2rem, 4cqi, 10rem);
+  margin: auto;
+}
+.post__body .company {
+  font-size: clamp(1.5rem, 2cqi, 2rem);
+  margin: auto;
+}
+
+.post__grid {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+
+  @media (min-width: 992px) {
+    flex-direction: row;
+  }
+
+  @media (min-width: 1200px) {
+    flex-direction: row;
+  }
+}
+
+.post__grid__item {
+  align-content: center;
+  align-items: center;
+}
+
+.post__grid__item:nth-child(1) {
+  width: 82%;
+  // order: 2;
+
+  @media (max-width: 992px) {
+    width: 100%;
+    order: 2;
+  }
+
+  @media (min-width: 992px) {
+    width: 100%;
+    order: 1;
+  }
+}
+
+.post__grid__item:nth-child(2) {
+  width: 18%;
+  display: flex;
+  // order: 1;
+
+  @media (max-width: 992px) {
+    order: 1;
+    display: none;
+  }
+
+  @media (min-width: 992px) {
+    order: 2;
+  }
+}
+
+.logo__container {
+  align-content: center;
+  align-items: center;
+ 
+
+  img {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    object-fit: contain;
+    margin: auto;
+  }
+
+  @media (max-width: 992px) {
+    img {
+      width: 90px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    padding: 1rem;
+  }
+  @media (min-width: 1200px) {
+    padding: 2rem;
+  }
+
+ 
+}
+
+.project-language-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  margin: 25px 0px 10px;
+  gap: 0.5rem;
+  padding: 0px;
+  list-style: none;
+  font-family: "Ubuntu Mono", monospace;
+  li {
+    padding: 5px 1rem;
+    //border-radius: $border-radius-pill;
+    background-color: black;
+    text-align: center;
+    font-size: $font-size-sm;
+  }
 }

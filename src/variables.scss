@@ -4,22 +4,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
 
 $font-primary: "Inter", sans-serif;
-$font-hero: "Inter", sans-serif;
-$font-title: "Inter", sans-serif;
+$font-hero: "Reenie Beanie", sans-serif;
+$font-title: "Bebas Neue", sans-serif;
 $font-title-secondary: "Over the Rainbow", cursive;
 
-$primary: #71d089;
+$primary: #fb8500;
 $secondary: #ced4da;
-$info: #2b2a30;
-$warning: #476860;
-$danger: #354f52;
+$info: #212529;
+$warning: #684761;
 //$white: #CCD0CF;
 $black: #161616;
-$dark: #006d77;
+$dark: #000000;
 $background-color: #161616; // #2b2a30
 //$background-blur: rgba(36, 69, 102, 0.7);
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
+@import "../node_modules/bootstrap/scss/bootstrap-grid.scss";

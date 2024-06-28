@@ -51,10 +51,11 @@
   height: 0.2em;
   width: 104%;
   left: -1%;
-  background: linear-gradient(
-    65deg,
-    #257c58 0%,
-    #268576 100%,
-    rgba(255, 209, 0, 0) 100%
-  );
+  background-color:  $primary ;
+  // linear-gradient(
+  //   65deg,
+  //  0%,
+  //   #268576 100%,
+  //   rgba(255, 209, 0, 0) 100%
+  // );
 }

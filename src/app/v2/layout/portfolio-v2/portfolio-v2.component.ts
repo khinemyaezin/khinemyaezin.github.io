@@ -9,6 +9,7 @@ import { CircleComponent } from '../../section/circle/circle.component';
 import { DiscoverComponent } from '../../section/discover/discover.component';
 import { DoorComponent } from '../../section/door/door.component';
 import { StoryComponent } from '../../section/story/story.component';
+import { MovingComponent } from '../../section/moving/moving.component';
 
 @Component({
   selector: 'app-portfolio-v2',
@@ -22,6 +23,7 @@ import { StoryComponent } from '../../section/story/story.component';
     DoorComponent,
     StoryComponent,
     CircleComponent,
+    MovingComponent,
     ScrollEmitterDirective,
     WindowResizeDirective
   ],

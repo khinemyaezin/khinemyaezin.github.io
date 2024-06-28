@@ -26,14 +26,14 @@ export class ScrollEmitterDirective {
 
   @HostListener("scroll", ["$event"])
   onTouchMove(event: Event) {
-    //console.log("scroll.");
+    console.log("scroll.");
     this.filterScrollEvent(0);
   }
 
   @HostListener("wheel", ["$event"])
   onScrollWheel(event: WheelEvent) {
     event.preventDefault();
-    //console.log("whell move.");
+    console.log("whell move.");
     this.filterScrollEvent(event.deltaY);
   }
 

@@ -9,14 +9,32 @@
 
 <ng-template #blogTemplate let-data="data">
     <div class="blog__post">
-        <div class="post">
+        <div class="post blur">
             <div class="post__image__container">
                 <div class="post__body">
-                    <h4 class="title">{{data.title}}</h4>
+                    <h4 class="title mb-3">{{data.title}}</h4>
+                    <h5 class="mb-3">
+                        <div class="d-flex justify-content-start gap-3">
+                            <span>{{data.company}}</span>
+                            <span>{{data.duration}}</span>
+                        </div>
+                    </h5>
                     <div class="seperator"></div>
-                    <p class="fs-6">
-                        {{data.desc}}
-                    </p>
+                    <div class="post__grid">
+                        <div class="post__grid__item">
+                            <p class="fs-6">
+                                {{data.desc}}
+                            </p>
+                            <ul class="project-language-list">
+                                <li *ngFor="let lan of data.languages">{{lan}}</li>
+                            </ul>
+                        </div>
+                        <div class="post__grid__item">
+                            <div class="logo__container">
+                                <img [src]="data.image" loading="lazy" alt="">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
