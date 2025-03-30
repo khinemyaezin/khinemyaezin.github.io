@@ -6,24 +6,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
 $font-primary: "Inter", sans-serif;
 $font-hero: "Reenie Beanie", sans-serif;
 $font-title: "Bebas Neue", sans-serif;
-$font-title-secondary: "Over the Rainbow", cursive;
+//$font-title-secondary: "Over the Rainbow", cursive;
 
-$primary: #fb8500;
-$secondary: #ced4da;
-$info: #212529;
-$warning: #684761;
-//$white: #CCD0CF;
+$primary: #89f7fe;
+$secondary: #66a6ff;
 $black: #161616;
 $dark: #000000;
-$background-color: #161616; // #2b2a30
-//$background-blur: rgba(36, 69, 102, 0.7);
+$background-color: #161616;
+
 
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
+
+$disabled-color: $gray-600;

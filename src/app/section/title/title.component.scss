@@ -1,0 +1,45 @@
+/* Cirlce */
+@import "../../scss/theme.scss";
+@import "../../scss/text-reveal.scss";
+
+#title__section {
+  position: relative;
+  width: 100%;
+}
+
+.title__sticky {
+  position: sticky;
+  top: 0;
+}
+
+.title__sticky h2 {
+  font-size: clamp(2rem, 15cqi, 20rem);
+  font-family: $font-title;
+  color: $gray-100;
+}
+
+.rw-word {
+  display: inline-block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity .5s ease-in, transform .5s ease-in;
+  transform: scale(0.8);
+  width: 100%;
+  height: 100vh;
+}
+
+.rw-word.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.rw-sentence {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,68 @@
+@import "../../variables.scss";
+@import "../scss/text-reveal.scss";
+
+.gradient-text {
+  background: linear-gradient(to right, $primary, $secondary);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, $primary, $secondary);
+}
+
+.gradient-bg-base {
+  background: linear-gradient(to right, $gray-900, $gray-800);
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.gradient-bg.animate {
+  background-size: 300% 300%;
+  animation: gradientBG 5s ease infinite;
+}
+
+.gradient-bg-base.animate {
+  background-size: 300% 300%;
+  animation: gradientBG 5s ease infinite;
+}
+
+strong {
+  color: $secondary;
+}
+
+.scroll__sticky {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 50%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0; //initially hidden
+}
+
+.fade-in.show {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.text__reveal {
+  font-family: $font-title;
+}
