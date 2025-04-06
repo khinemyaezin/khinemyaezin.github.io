@@ -23,25 +23,25 @@ import { CommonModule } from "@angular/common";
   templateUrl: "./title.component.html",
   styleUrl: "./title.component.scss",
 })
-export class TitleComponent extends DadComponent implements AfterViewInit,OnInit {
+export class TitleComponent extends DadComponent implements AfterViewInit, OnInit {
   @ViewChild("session") sessionRef!: ElementRef;
   @ViewChild(IntersectionDirective) intersection!: IntersectionDirective;
   @ViewChildren("text") textsView!: QueryList<ElementRef>;
   @Input("message") texts: string[] | string | undefined;
 
-  _texts:string[] = [];
+  _texts: string[] = [];
 
   constructor(
     private scroll: ScrollEmitterDirective,
     private render: Renderer2
   ) {
     super();
-    
+
   }
 
   ngOnInit(): void {
     if (typeof this.texts === 'string') {
-      this._texts = this.texts.split(',').map(text => text.trim());
+      this._texts = [...this.texts.split(',').map(text => text.trim()),''];
     } else {
       this._texts = Array.isArray(this.texts) ? this.texts : [];
     }
@@ -74,8 +74,8 @@ export class TitleComponent extends DadComponent implements AfterViewInit,OnInit
       const sessionRect = this.sessionRef.nativeElement.getBoundingClientRect();
       const scrolledDistanceFromTop = Math.max(0, sessionRect.bottom - window.innerHeight);
       const totalHeight = sessionRect.height - window.innerHeight;
-      const scrolledPercentage = Math.floor(100 - ((scrolledDistanceFromTop / totalHeight) * 100));
-      const activeIndex = Math.floor(scrolledPercentage / 100 * this._texts.length);
+      const scrolledPercentage = totalHeight == 0 ? 0 : Math.floor(100 - ((scrolledDistanceFromTop / totalHeight) * 100));
+      const activeIndex = scrolledPercentage == 0 ? scrolledPercentage : Math.floor(scrolledPercentage / 100 * this._texts.length);
 
       this.textsView.forEach((word, index) => {
         this.render[index === activeIndex ? 'addClass' : 'removeClass'](word.nativeElement, "active");

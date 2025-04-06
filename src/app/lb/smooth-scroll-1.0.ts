@@ -5,13 +5,13 @@ export class SmoothScrollV1 implements SmoothScroll {
     scrollChange!: EventEmitter<any>;
     private targetPos = 0;
     private moving = false;
-    
-    private speed = 0.3; 
-    private smooth = 30; 
+
+    private speed = 0.7;
+    private smooth = 30;
     private momentumFactor = 0.85;
     private minDelta = 0.5;
 
-    constructor(private el: ElementRef, private renderer: Renderer2) {}
+    constructor(private el: ElementRef, private renderer: Renderer2) { }
 
     scrollChangeEvent(scrollEvent: EventEmitter<any>) {
         this.scrollChange = scrollEvent;
@@ -21,16 +21,13 @@ export class SmoothScrollV1 implements SmoothScroll {
         delta.preventDefault();
         const normalizedDelta = this.normalizeWheelDelta(delta);
         this.updateTarget(normalizedDelta);
-        
-        if (!this.moving) {
-            this.startAnimation();
-        }
+        this.startAnimation();
     }
 
-    private normalizeWheelDelta(delta: WheelEvent): number {
+    normalizeWheelDelta(delta: WheelEvent): number {
         let wheelDelta = delta.deltaY;
-        
-        switch(delta.deltaMode) {
+
+        switch (delta.deltaMode) {
             case WheelEvent.DOM_DELTA_LINE:  // Mouse wheel (line mode)
                 wheelDelta *= 40;  // Convert lines to pixels
                 break;
@@ -42,15 +39,17 @@ export class SmoothScrollV1 implements SmoothScroll {
         return wheelDelta * (delta.deltaMode === WheelEvent.DOM_DELTA_LINE ? 0.4 : 1);
     }
 
-    private updateTarget(delta: number) {
+    updateTarget(delta: number) {
         const element = this.el.nativeElement;
         const maxScroll = element.scrollHeight - element.clientHeight;
-        
+
         this.targetPos += delta * this.speed;
         this.targetPos = Math.max(0, Math.min(this.targetPos, maxScroll));
     }
 
-    private startAnimation() {
+    startAnimation() {
+        if (this.moving) return;
+
         this.moving = true;
         this.animate();
     }
@@ -58,7 +57,7 @@ export class SmoothScrollV1 implements SmoothScroll {
     private animate() {
         const element = this.el.nativeElement;
         const currentScroll = element.scrollTop;
-        
+
         const delta = (this.targetPos - currentScroll) * this.momentumFactor;
         const newPos = currentScroll + delta / this.smooth;
 

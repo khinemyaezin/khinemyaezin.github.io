@@ -21,25 +21,25 @@ export class ExperienceComponent extends DadComponent implements AfterViewInit {
   expPosts = [
     {
       title: "Software Engineer",
-      company: "@UOB",
+      company: "@UOB, Singapore.",
       duration: "2023 - present",
       languages: ["Backend"],
       image:
         "https://upload.wikimedia.org/wikipedia/en/3/3c/Yoma_Bank_Logo.svg",
-      desc: "Develop and create APIs used to construct for the bank, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices."
+      desc: "Worked on designing and developing backend systems using Java, Spring Boot, and Microservices. Built and integrated REST APIs for digital banking and fintech projects. Modernized legacy systems and delivered secure, scalable solutions for local banks."
     },
     {
       title: "Senior Backend Developer",
-      company: "@Yomabank",
+      company: "@Yomabank, Burma.",
       duration: "2023 - 2024",
       languages: ["Spring boot", "Microservices"],
       image:
         "https://upload.wikimedia.org/wikipedia/en/3/3c/Yoma_Bank_Logo.svg",
-      desc: "Develop and create APIs used to construct for the bank, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices."
+      desc: "Worked on APIs used to construct for the bank, across the whole product. Work closely with cross-functional teams, including developers, designers, and product managers, to implement and advocate for best practices."
     },
     {
       title: "Developer",
-      company: "@MIT",
+      company: "@MIT, Burma.",
       duration: "2019 - 2021",
       languages: ["Spring MVC", "C#", "Angular", "Ionic"],
       image:

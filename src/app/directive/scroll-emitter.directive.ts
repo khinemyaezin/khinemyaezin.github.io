@@ -22,9 +22,20 @@ export class ScrollEmitterDirective{
     this.smoothScroll.scrollChangeEvent(this.scrollChange);
   }
 
+  @HostListener("scroll", ["$event"])
+  onTouchMove(event: Event) {
+    event.preventDefault();
+    const normalizedDelta = 0;
+    this.smoothScroll.updateTarget(normalizedDelta);
+    this.smoothScroll.startAnimation();
+  }
+
+
   @HostListener("wheel", ["$event"])
   onScrollWheel(event: WheelEvent) {
     event.preventDefault();
-    this.smoothScroll.filterScrollEvent(event);
+    const normalizedDelta = this.smoothScroll.normalizeWheelDelta(event);
+    this.smoothScroll.updateTarget(normalizedDelta);
+    this.smoothScroll.startAnimation();
   }
 }
