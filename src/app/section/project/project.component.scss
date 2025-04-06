@@ -150,6 +150,7 @@
     position: relative;
     grid-area: 1 / 1 / -1 / 7;
     z-index: 2;
+    //background-color: $background-color;
 
     @media (max-width: 991.98px) {
       grid-column: 1 / 9;
@@ -159,15 +160,18 @@
       padding: 2rem;
       text-align: left;
       z-index: 2;
+      background-color: transparent;
     }
     .project-overline {
       margin-bottom: 0rem;
       color: $secondary;
+      font-family: $font-primary;
     }
     .project-title {
       font-size: clamp(2rem, 2cqi, 10rem);
       margin: 1rem 0px 1rem 0px;
       font-family: $font-title;
+      text-transform: uppercase;
     }
     .project-description {
       transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
@@ -265,7 +269,7 @@
         object-fit: cover;
         width: auto;
         height: 100%;
-        filter: grayscale(100%) contrast(1) brightness(50%);
+        filter: grayscale(100%) contrast(1) brightness(20%);
         opacity: 0.1;
       }
     }

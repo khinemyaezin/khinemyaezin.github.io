@@ -32,7 +32,7 @@ export class ProjectComponent extends DadComponent implements AfterViewInit {
 
   private _projects: any[] = [
     {
-      languages: ["Javascript with Jquery", "Firebase", "Bootstrap"],
+      languages: ["JS", "Firebase", "Bootstrap"],
       published_year: "Nov 2022",
       subtitle: "Cable Locator",
       links: [

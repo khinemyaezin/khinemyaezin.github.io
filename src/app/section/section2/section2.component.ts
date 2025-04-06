@@ -62,6 +62,7 @@ export class Section2Component extends DadComponent implements AfterViewInit {
     leftChars.map((char) => {
       let span = this.render.createElement('span');
       this.render.setProperty(span, 'textContent', char);
+      //this.render.addClass(span, 'bg-primary');
       this.render.appendChild(this.textHeaderLeft.nativeElement, span);
       return span;
     }).forEach((span) => this.leftChars.push(span));
@@ -69,6 +70,7 @@ export class Section2Component extends DadComponent implements AfterViewInit {
     rightChars.map((char) => {
       let span = this.render.createElement('span');
       this.render.setProperty(span, 'textContent', char);
+      //this.render.addClass(span, 'bg-primary');
       this.render.appendChild(this.textHeaderRight.nativeElement, span);
       return span;
     }).forEach((span) => this.rightChars.push(span));

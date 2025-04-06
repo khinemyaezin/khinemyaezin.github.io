@@ -1,0 +1,70 @@
+/* Discover */
+@import "../../scss/theme.scss";
+
+#contact {
+  position: relative;
+  background-color: $gray-900;
+  height: 100%;
+}
+
+.contact__container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  text-align: center;
+}
+
+.contact-links {
+  grid-column-gap: 1.2em;
+  grid-row-gap: 1.2em;
+  text-align: center;
+  flex-flow: column;
+  margin-top: 60px;
+  font-size: 1.7em;
+  text-decoration: none;
+  display: flex;
+  font-family: $font-title;
+  span{
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    position: relative;
+    padding: 0 60px 0 60px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    /* Space for the icon */
+  }
+
+  a:hover {
+    text-decoration: line-through;
+    transform: scale(1.2);
+    /* Make more space when icon moves */
+    &:nth-child(1) .icon{
+      left: 50px;
+      /* Move icon into visible area */
+    }
+    &:nth-child(2) .icon{
+      left: 35px;
+    }
+    &:nth-child(3) .icon{
+      left: 25px;
+    }
+  }
+
+  a .icon {
+    position: absolute;
+    left: -30px;
+    /* Start hidden to the left */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+}
+
+footer {
+  font-size: smaller;
+}

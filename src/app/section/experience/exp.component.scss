@@ -124,6 +124,7 @@
 
 .post__body .title {
   font-family: $font-title;
+  text-transform: uppercase;
   font-size: clamp(2rem, 4cqi, 10rem);
   margin: auto;
 }
