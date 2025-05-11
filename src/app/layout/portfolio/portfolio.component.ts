@@ -5,10 +5,10 @@ import { WindowResizeDirective } from '../../directive/window-resize.directive';
 import { ExperienceComponent } from '../../section/experience/exp.component';
 import { TitleComponent } from '../../section/title/title.component';
 import { ContactComponent } from '../../section/contact/contact.component';
-import { Section2Component } from '../../section/section2/section2.component';
 import { StoryComponent } from '../../section/story/story.component';
 import { MovingComponent } from '../../section/moving-title/moving-title.component';
 import { ProjectWrapperComponent } from '../../section/project-wrapper/project-wrapper.component';
+import { IntroductionComponent } from '../../section/introduction/introduction.component';
 
 @Component({
   selector: 'portfolio',
@@ -18,7 +18,7 @@ import { ProjectWrapperComponent } from '../../section/project-wrapper/project-w
     ProjectWrapperComponent,
     ExperienceComponent,
     ContactComponent,
-    Section2Component,
+    IntroductionComponent,
     StoryComponent,
     TitleComponent,
     MovingComponent,
