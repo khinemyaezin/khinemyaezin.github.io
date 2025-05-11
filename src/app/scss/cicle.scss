@@ -1,0 +1,36 @@
+/* text-ring.component.css */
+.ring {
+    font-family: monospace;
+    text-transform: uppercase;
+    position: relative;
+    animation: rotation 6s infinite linear;
+  }
+  
+  .char {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:
+      translate(-50%, -50%)
+      rotate(calc(var(--inner-angle) * var(--char-index)))
+      translateY(var(--radius));
+  }
+  
+  @keyframes rotation {
+    to {
+      rotate: -360deg;
+    }
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }

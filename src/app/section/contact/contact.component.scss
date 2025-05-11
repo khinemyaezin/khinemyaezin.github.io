@@ -1,0 +1,89 @@
+/* Discover */
+@import "../../scss/theme.scss";
+
+#contact {
+  position: relative;
+  background-color: $gray-900;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact__container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  position: relative;
+}
+
+.contact-links {
+  grid-column-gap: 1.2em;
+  grid-row-gap: 1.2em;
+  text-align: center;
+  flex-flow: column;
+  margin: 2rem 0;
+  font-size: 1.7em;
+  text-decoration: none;
+  display: flex;
+  font-family: $font-title;
+  
+  span {
+    position: relative;
+  }
+  
+  a {
+    text-decoration: none;
+    position: relative;
+    padding: 0 60px 0 60px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    color: inherit;
+    margin: 0.5rem 0;
+  }
+
+  a:hover {
+    text-decoration: line-through;
+    transform: scale(1.2);
+    
+    &:nth-child(1) .icon {
+      left: 50px;
+    }
+    &:nth-child(2) .icon {
+      left: 35px;
+    }
+    &:nth-child(3) .icon {
+      left: 25px;
+    }
+  }
+
+  a .icon {
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+  }
+}
+
+footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem;
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+  }
+}

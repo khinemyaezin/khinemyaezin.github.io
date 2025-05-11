@@ -1,0 +1,40 @@
+<section id="exp" #section intersection>
+    <div class="exp__hero">
+        <h2 class="text__reveal" textReveal>TIMELINE</h2>
+    </div>
+    <ng-container *ngFor="let value of expPosts">
+        <ng-container *ngTemplateOutlet="expTemplate,  context: {data : value}"></ng-container>
+    </ng-container>
+</section>
+
+<ng-template #expTemplate let-data="data">
+    <div class="exp__post" #expPost>
+        <div class="post">
+            <div class="post__container">
+                <div class="post__body">
+                    <h4 class="title mb-3"><span class="gradient-text">{{data.title}}</span></h4>
+                    <div class="mb-3">
+                        <h5 class="d-flex gap-2 location">
+                            <span>{{data.company}}</span>
+                            <span>{{data.duration}}</span>
+                        </h5>
+                    </div>
+                    <div class="seperator-wrapper">
+                        <div class="seperator"></div>
+                    </div>
+                    <div class="post__grid">
+                        <div class="post__grid__item">
+                            <p class="fs-6">
+                                {{data.desc}}
+                            </p>
+                            <!-- <ul class="project-language-list">
+                                <li *ngFor="let lan of data.languages" class="bord">{{lan}}</li>
+                            </ul> -->
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

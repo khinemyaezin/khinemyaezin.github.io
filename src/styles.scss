@@ -1,16 +1,4 @@
  @import "bootstrap.scss";
-// @import "./scss/drop.scss";
-// @import "./scss/shrink-jump.scss";
-// @import "./scss/parallax.scss";
-// @import "./scss/card.scss";
-// @import "./scss/animated-bar.scss";
-
-body {
-  overflow-y: hidden !important;
-  background: no-repeat center $background-color;
-  font-family: $font-primary;
-  font-optical-sizing: auto;
-}
 
 ::-webkit-scrollbar {
   width: 5px !important;
@@ -32,9 +20,3 @@ body {
   background: #6b8398;
 }
 
-.blur {
- // background-color: hsla(0, 0%, 100%, 0.05);
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(30px);
-  color: $secondary;
-}
