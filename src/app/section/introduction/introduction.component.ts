@@ -14,13 +14,13 @@ import { ShrinkjumpDirective } from "../../directive/shrinkjump.directive";
 import { DadComponent } from "../../dad-component";
 
 @Component({
-  selector: "section-2",
+  selector: "section-introduction",
   standalone: true,
   imports: [IntersectionDirective, ShrinkjumpDirective],
-  templateUrl: "./section2.component.html",
-  styleUrl: "./section2.component.scss",
+  templateUrl: "./introduction.component.html",
+  styleUrl: "./introduction.component.scss",
 })
-export class Section2Component extends DadComponent implements AfterViewInit {
+export class IntroductionComponent extends DadComponent implements AfterViewInit {
   @ViewChild("hero") hero!: ElementRef;
   @ViewChild("textHeaderLeft") textHeaderLeft!: ElementRef;
   @ViewChild("textHeaderRight") textHeaderRight!: ElementRef;

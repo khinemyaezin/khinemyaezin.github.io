@@ -5,6 +5,8 @@ export class SmoothScrollV1 implements SmoothScroll {
     scrollChange!: EventEmitter<any>;
     private targetPos = 0;
     private moving = false;
+    private lastTouchY: number = 0;
+    private isTouchStart: boolean = true;
 
     private speed = 0.7;
     private smooth = 30;
@@ -24,19 +26,45 @@ export class SmoothScrollV1 implements SmoothScroll {
         this.startAnimation();
     }
 
-    normalizeWheelDelta(delta: WheelEvent): number {
-        let wheelDelta = delta.deltaY;
+    normalizeWheelDelta(delta: WheelEvent | TouchEvent): number {
+        if (delta instanceof WheelEvent) {
+            console.log("Wheel event detected");
+            let wheelDelta = delta.deltaY;
+            switch (delta.deltaMode) {
+                case WheelEvent.DOM_DELTA_LINE:  // Mouse wheel (line mode)
+                    wheelDelta *= 40;  // Convert lines to pixels
+                    break;
+                case WheelEvent.DOM_DELTA_PAGE:  // Page scroll
+                    wheelDelta *= this.el.nativeElement.clientHeight;
+                    break;
+            }
+            return wheelDelta * (delta.deltaMode === WheelEvent.DOM_DELTA_LINE ? 0.4 : 1);
 
-        switch (delta.deltaMode) {
-            case WheelEvent.DOM_DELTA_LINE:  // Mouse wheel (line mode)
-                wheelDelta *= 40;  // Convert lines to pixels
-                break;
-            case WheelEvent.DOM_DELTA_PAGE:  // Page scroll
-                wheelDelta *= this.el.nativeElement.clientHeight;
-                break;
+        } else if (delta instanceof TouchEvent) {
+            console.log("Touch event detected");
+            const touchEvent = delta;
+            const currentTouchY = touchEvent.touches[0].clientY;
+
+            if (this.isTouchStart) {
+                this.lastTouchY = currentTouchY;
+                this.isTouchStart = false;
+                return 0;
+            }
+
+            const deltaY = this.lastTouchY - currentTouchY;
+            this.lastTouchY = currentTouchY;
+
+            // Adjust touch sensitivity
+            const touchSensitivity = 1.5;
+            return deltaY * touchSensitivity;
         }
+        return 0;
+    }
 
-        return wheelDelta * (delta.deltaMode === WheelEvent.DOM_DELTA_LINE ? 0.4 : 1);
+    // Call this method when touch ends to reset the touch state
+    reset() {
+        this.isTouchStart = true;
+        this.lastTouchY = 0;
     }
 
     updateTarget(delta: number) {
@@ -70,5 +98,4 @@ export class SmoothScrollV1 implements SmoothScroll {
             this.moving = false;
         }
     }
-
 }
