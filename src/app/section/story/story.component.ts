@@ -3,11 +3,23 @@ import { IntersectionDirective } from '../../directive/intersection.directive';
 import { combineLatest, filter, Subject, takeUntil } from 'rxjs';
 import { DadComponent } from '../../dad-component';
 import { ScrollEmitterDirective } from '../../directive/scroll-emitter.directive';
+import storyData from './story.data.json';
+import { CommonModule } from '@angular/common';
+
+interface StoryParagraph {
+  text: string;
+  classes: string;
+}
+
+interface StoryData {
+  profileImage: string;
+  paragraphs: StoryParagraph[];
+}
 
 @Component({
   selector: 'section-story',
   standalone: true,
-  imports: [IntersectionDirective],
+  imports: [IntersectionDirective, CommonModule],
   templateUrl: './story.component.html',
   styleUrl: './story.component.scss'
 })
@@ -16,6 +28,8 @@ export class StoryComponent extends DadComponent implements AfterViewInit {
   @ViewChild("section") section!: ElementRef;
   @ViewChildren("content") contents!: ElementRef[];
   @ViewChild(IntersectionDirective) intersection!: IntersectionDirective;
+
+  storyData: StoryData = storyData;
 
   constructor(private render: Renderer2, private scroll: ScrollEmitterDirective) {
     super();
