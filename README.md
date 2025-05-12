@@ -1,27 +1,79 @@
-# Khinemyaezin
+# Khinemyaezin - Personal Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.2.
+A modern, responsive personal portfolio website built with Angular 18, showcasing professional experience, projects, and personal story.
 
-## Development server
+## 🌟 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Modern Design**: Clean and professional UI with smooth animations
+- **Responsive Layout**: Fully responsive design that works on all devices
+- **Interactive Sections**:
+  - Hero section with dynamic animations
+  - Professional experience timeline
+  - Project showcase
+  - Personal story section
+  - Contact information
+- **Performance Optimized**: Built with performance in mind
+- **Custom Animations**: Smooth scroll animations and transitions
 
-## Code scaffolding
+## 🛠️ Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Angular 18
+- SCSS for styling
+- Bootstrap for responsive design
+- Custom animations and transitions
+- Intersection Observer API for scroll animations
 
-## Build
+## 🚀 Getting Started
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Prerequisites
 
-## Running unit tests
+- Node.js (v18 or higher)
+- npm (v9 or higher)
+- Angular CLI (v18.0.2)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Installation
 
-## Running end-to-end tests
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/khinemyaezin/khinemyaezin.github.io.git
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+2. Navigate to the project directory:
+   ```bash
+   cd khinemyaezin.github.io
+   ```
 
-## Further help
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+4. Start the development server:
+   ```bash
+   ng serve
+   ```
+
+5. Open your browser and navigate to `http://localhost:4200`
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── section/           # Main content sections
+│   │   ├── hero/         # Hero section
+│   │   ├── experience/   # Experience timeline
+│   │   ├── project/      # Project showcase
+│   │   ├── story/        # Personal story
+│   │   └── contact/      # Contact information
+│   ├── directive/        # Custom Angular directives
+│   ├── layout/          # Layout components
+│   └── scss/            # Global styles and themes
+├── assets/              # Static assets
+└── styles/             # Global styles
+```
+
+## 👤 Author
+
+Khinemyaezin
+- GitHub: [@khinemyaezin](https://github.com/khinemyaezin)
