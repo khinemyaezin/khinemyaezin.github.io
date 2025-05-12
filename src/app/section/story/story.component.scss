@@ -47,6 +47,11 @@
   //text-transform: uppercase;
   p {
     text-wrap: balance;
+    
+    ::ng-deep strong {
+      color: $primary;
+      font-weight: 600;
+    }
   }
 }
 

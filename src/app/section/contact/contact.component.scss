@@ -32,6 +32,8 @@
   text-decoration: none;
   display: flex;
   font-family: $font-title;
+  position: relative;
+  z-index: 1000;
   
   span {
     position: relative;
@@ -45,9 +47,12 @@
     transition: all 0.3s ease;
     color: inherit;
     margin: 0.5rem 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
 
-  a:hover {
+  a:hover, a:active {
     text-decoration: line-through;
     transform: scale(1.2);
     
@@ -68,6 +73,7 @@
     top: 50%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
+    pointer-events: none;
   }
 }
 

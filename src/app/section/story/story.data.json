@@ -1,0 +1,17 @@
+{
+  "profileImage": "exp-hero.png",
+  "paragraphs": [
+    {
+      "text": "Back in <strong>2013</strong>, I had this wild idea to build an HTML block inspired by my sister's final year project. And guess what? I totally ended up getting hooked on coding!",
+      "classes": "align-self-center fade-in"
+    },
+    {
+      "text": "Fast forward to now, and I've been working on some really cool projects for a finance company. Right now, I'm all about <strong>Web development</strong>.",
+      "classes": "fade-in"
+    },
+    {
+      "text": "When I'm not coding, you can find me either drawing or hanging out with my friends at the park. It's always a blast!",
+      "classes": "align-self-center m-0 text-start w-100 fade-in"
+    }
+  ]
+} 
