@@ -5,13 +5,15 @@ export class SmoothScrollV1 implements SmoothScroll {
     scrollChange!: EventEmitter<any>;
     private targetPos = 0;
     private moving = false;
-    private lastTouchY: number = 0;
-    private isTouchStart: boolean = true;
 
     private speed = 0.7;
     private smooth = 30;
     private momentumFactor = 0.85;
     private minDelta = 0.5;
+
+    private lastTouchY: number = 0;
+    private isTouchStart: boolean = true;
+    private touchSensitivity = 1;
 
     constructor(private el: ElementRef, private renderer: Renderer2) { }
 
@@ -28,20 +30,18 @@ export class SmoothScrollV1 implements SmoothScroll {
 
     normalizeWheelDelta(delta: WheelEvent | TouchEvent): number {
         if (delta instanceof WheelEvent) {
-            console.log("Wheel event detected");
             let wheelDelta = delta.deltaY;
             switch (delta.deltaMode) {
-                case WheelEvent.DOM_DELTA_LINE:  // Mouse wheel (line mode)
-                    wheelDelta *= 40;  // Convert lines to pixels
+                case WheelEvent.DOM_DELTA_LINE:  
+                    wheelDelta *= 40;  
                     break;
-                case WheelEvent.DOM_DELTA_PAGE:  // Page scroll
+                case WheelEvent.DOM_DELTA_PAGE: 
                     wheelDelta *= this.el.nativeElement.clientHeight;
                     break;
             }
             return wheelDelta * (delta.deltaMode === WheelEvent.DOM_DELTA_LINE ? 0.4 : 1);
 
         } else if (delta instanceof TouchEvent) {
-            console.log("Touch event detected");
             const touchEvent = delta;
             const currentTouchY = touchEvent.touches[0].clientY;
 
@@ -54,9 +54,7 @@ export class SmoothScrollV1 implements SmoothScroll {
             const deltaY = this.lastTouchY - currentTouchY;
             this.lastTouchY = currentTouchY;
 
-            // Adjust touch sensitivity
-            const touchSensitivity = 1.5;
-            return deltaY * touchSensitivity;
+            return deltaY * this.touchSensitivity;
         }
         return 0;
     }

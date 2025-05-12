@@ -6,7 +6,6 @@ import { ExperienceComponent } from '../../section/experience/exp.component';
 import { TitleComponent } from '../../section/title/title.component';
 import { ContactComponent } from '../../section/contact/contact.component';
 import { StoryComponent } from '../../section/story/story.component';
-import { MovingComponent } from '../../section/moving-title/moving-title.component';
 import { ProjectWrapperComponent } from '../../section/project-wrapper/project-wrapper.component';
 import { IntroductionComponent } from '../../section/introduction/introduction.component';
 
@@ -21,7 +20,6 @@ import { IntroductionComponent } from '../../section/introduction/introduction.c
     IntroductionComponent,
     StoryComponent,
     TitleComponent,
-    MovingComponent,
     ScrollEmitterDirective,
     WindowResizeDirective
   ],

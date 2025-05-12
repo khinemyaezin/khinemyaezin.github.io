@@ -4,12 +4,11 @@ import { ScrollEmitterDirective } from "../../directive/scroll-emitter.directive
 import { IntersectionDirective } from "../../directive/intersection.directive";
 import { DadComponent } from "../../dad-component";
 import { CommonModule } from "@angular/common";
-import { CicleComponent } from "../../components/cicle/cicle.component";
 
 @Component({
   selector: "section-contact",
   standalone: true,
-  imports: [CommonModule,IntersectionDirective,CicleComponent],
+  imports: [CommonModule,IntersectionDirective],
   templateUrl: "./contact.component.html",
   styleUrl: "./contact.component.scss",
 })
@@ -21,8 +20,6 @@ export class ContactComponent extends DadComponent {
   get today() {
     return new Date();
   }
-
-
 
   constructor(
     private scroll: ScrollEmitterDirective,

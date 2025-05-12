@@ -35,6 +35,9 @@
 strong {
   color: $secondary;
 }
+::ng-deep strong {
+  color: $secondary;
+}
 
 .scroll__sticky {
   position: sticky;

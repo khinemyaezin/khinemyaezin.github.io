@@ -14,6 +14,23 @@ import { combineLatest, filter, takeUntil } from "rxjs";
 import { IntersectionDirective } from "../../directive/intersection.directive";
 import { WindowResizeDirective } from "../../directive/window-resize.directive";
 import { DadComponent } from "../../dad-component";
+import projectsData from './projects.json';
+
+interface ProjectLink {
+  icon: string;
+  url: string;
+}
+
+interface Project {
+  languages: string[];
+  published_year: string;
+  subtitle: string;
+  links: ProjectLink[];
+  title: string;
+  desc: string;
+  imgSrc: string;
+  active: boolean;
+}
 
 @Component({
   selector: "project",
@@ -30,44 +47,7 @@ export class ProjectComponent extends DadComponent implements AfterViewInit {
   @ViewChild(IntersectionDirective) intersection!: IntersectionDirective;
   @Input("offsetTop") parentOffsetTop!: number;
 
-  private _projects: any[] = [
-    {
-      languages: ["JS", "Firebase", "Bootstrap"],
-      published_year: "Nov 2022",
-      subtitle: "Cable Locator",
-      links: [
-        {
-          icon: "box-arrow-up-right",
-          url: "https://cablelocator.net",
-        },
-      ],
-      title: "Featured Project",
-      desc: "Cable Detection Service landing website with ability to submit quote requests and control by admin page.",
-      imgSrc:
-        "cablelocator.png",
-      active: true,
-    },
-    {
-      languages: ["C#"],
-      published_year: "2020",
-      subtitle: "Unicode Typing Master",
-      links: [
-        {
-          icon: "github",
-          url: "https://github.com/khinemyaezin/unicode-typing-master",
-        },
-        {
-          icon: "download",
-          url: "https://github.com/khinemyaezin/unicode-typing-master/tree/main/bin/Debug",
-        },
-      ],
-      title: "Featured Project",
-      desc: 'Developed during transitional period of Zawgyi to Unicode.',
-      imgSrc:
-        "unicode-typing-master.png",
-      active: true,
-    }
-  ];
+  private _projects: Project[] = projectsData.projects;
 
   get projects() {
     return this._projects;
