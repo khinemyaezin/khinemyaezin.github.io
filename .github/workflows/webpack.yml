@@ -28,6 +28,9 @@ jobs:
         npm ci
         npm run build --prod
 
+    - name: Add CNAME
+      run: echo "khinemyaezin.com" > ./dist/khinemyaezin/browser/CNAME
+
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v3
       with:
