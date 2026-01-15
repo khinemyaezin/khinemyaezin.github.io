@@ -1,4 +1,7 @@
-<main main scrollEmitter>
+<!-- Scroll Progress Bar -->
+<div class="scroll-progress" [style.width.%]="scrollProgress"></div>
+
+<main main scrollEmitter cursor (scroll)="onMainScroll($event)">
     <div class="scroll__container">
         <section-hero></section-hero>
         <section-introduction></section-introduction>
