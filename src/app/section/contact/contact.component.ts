@@ -16,7 +16,7 @@ export class ContactComponent extends DadComponent {
   @ViewChild("container") containerRef!: ElementRef;
   @ViewChild("text") textEl!: ElementRef;
   @ViewChild(IntersectionDirective) intersection!: IntersectionDirective;
- 
+
   get today() {
     return new Date();
   }
@@ -41,6 +41,18 @@ export class ContactComponent extends DadComponent {
   }
 
   scrollDiscover() {
-    
+
+  }
+
+  // Magnetic hover effect
+  onMagneticMove(event: MouseEvent, element: HTMLElement): void {
+    const rect = element.getBoundingClientRect();
+    const x = (event.clientX - rect.left - rect.width / 2) * 0.3;
+    const y = (event.clientY - rect.top - rect.height / 2) * 0.3;
+    element.style.transform = `translate(${x}px, ${y}px) scale(1.1)`;
+  }
+
+  onMagneticLeave(element: HTMLElement): void {
+    element.style.transform = 'translate(0, 0) scale(1)';
   }
 }

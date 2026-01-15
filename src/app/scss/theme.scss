@@ -1,5 +1,6 @@
 @import "../../variables.scss";
 @import "../scss/text-reveal.scss";
+@import "../scss/cursor.scss";
 
 .gradient-text {
   background: linear-gradient(to right, $primary, $secondary);
@@ -68,4 +69,67 @@ strong {
 
 .text__reveal {
   font-family: $font-title;
+}
+
+// ===== VISUAL ENHANCEMENTS =====
+
+// Text Glow Effect
+.text-glow {
+  text-shadow:
+    0 0 10px rgba($primary, 0.5),
+    0 0 20px rgba($primary, 0.3),
+    0 0 40px rgba($primary, 0.1);
+}
+
+.text-glow-secondary {
+  text-shadow:
+    0 0 10px rgba($secondary, 0.5),
+    0 0 20px rgba($secondary, 0.3),
+    0 0 40px rgba($secondary, 0.1);
+}
+
+// Scroll Progress Bar
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, $primary, $secondary);
+  z-index: 9999;
+  transform-origin: left;
+  will-change: transform;
+  pointer-events: none;
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+// Section Divider
+.section-divider {
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, $primary, transparent);
+  margin: 0 auto;
+  transition: width 1s ease;
+
+  &.visible {
+    width: 80%;
+  }
+}
+
+// Staggered Animation Helper
+@for $i from 1 through 10 {
+  .stagger-#{$i} {
+    animation-delay: #{$i * 0.1}s;
+  }
 }

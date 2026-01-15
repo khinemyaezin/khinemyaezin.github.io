@@ -100,6 +100,26 @@
   -webkit-box-align: center;
   align-items: center;
   margin-bottom: 10px;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+
+  // 3D Tilt Effect on hover
+  &:hover {
+    transform: perspective(1000px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+
+    .project-content {
+      transform: translateZ(30px);
+    }
+
+    .project-image {
+      transform: translateZ(20px);
+    }
+  }
+
+  .project-content,
+  .project-image {
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
 
   @media (min-width: 992px) {
     padding: 0 10rem;

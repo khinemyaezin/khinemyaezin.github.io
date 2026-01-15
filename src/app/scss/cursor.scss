@@ -1,0 +1,54 @@
+@import "../../variables.scss";
+
+// Custom Cursor (desktop only)
+.custom-cursor,
+.cursor-trail {
+  display: none;
+
+  @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+    display: block;
+  }
+}
+
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease;
+  transform: translate(-50%, -50%);
+
+  &.cursor-hover {
+    width: 50px;
+    height: 50px;
+    border-color: $secondary;
+  }
+}
+
+.cursor-trail {
+  width: 8px;
+  height: 8px;
+  background: $primary;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+  transform: translate(-50%, -50%);
+  opacity: 0.6;
+}
+
+// Hide default cursor on desktop when custom cursor is active
+@media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a, button, [role="button"] {
+    cursor: none;
+  }
+}
