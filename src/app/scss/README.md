@@ -12,10 +12,7 @@ src/
 │
 └── app/
     └── scss/            # Custom utility styles and animations
-        ├── cicle.scss         # Circular rotating text component
         ├── cursor.scss        # Custom desktop cursor with hover effects
-        ├── flexbin.scss       # Responsive image gallery layout
-        ├── parallax.scss      # Horizontal parallax scrolling
         ├── shrink-jump.scss   # Interactive character animation
         ├── text-reveal.scss   # Text reveal fade-in animation
         └── theme.scss         # Global theme utilities and animations
@@ -54,10 +51,7 @@ src/
 - **`cicle.scss`** - Circular text ring animation component
 - **`cursor.scss`** - Custom cursor for desktop (hover: hover & pointer: fine)
 - **`flexbin.scss`** - Responsive flexbox image gallery with configurable row heights
-- **`parallax.scss`** - Horizontal scrolling parallax container
-- **`shrink-jump.scss`** - Character-level shrink and jump animation
-- **`text-reveal.scss`** - Slide-up text reveal animation
-- **`theme.scss`** - Global theme utilities including:
+- **`pursor.scss`** - Custom cursor for desktop (hover: hover & pointer: fine)
   - Gradient text and background utilities
   - Animation keyframes (fadeIn, fadeInUp, etc.)
   - Scroll sticky positioning
