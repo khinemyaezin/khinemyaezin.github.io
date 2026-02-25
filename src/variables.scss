@@ -1,3 +1,6 @@
+// ============================================
+// GOOGLE FONTS IMPORTS
+// ============================================
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Over+the+Rainbow&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
@@ -9,22 +12,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Delicious+Handrawn&display=swap');
 
+// ============================================
+// CUSTOM FONT VARIABLES
+// ============================================
 $font-primary: "Ubuntu Mono", monospace;
 $font-hero: "Reenie Beanie", sans-serif;
 $font-title: "Delicious Handrawn", sans-serif;
 //$font-title-secondary: "Over the Rainbow", cursive;
 
+// ============================================
+// COLOR VARIABLES
+// ============================================
 $primary: #89f7fe;
 $secondary: #66a6ff;
 $black: #161616;
 $dark: #000000;
 $background-color: #161616;
 
-
+// ============================================
+// BOOTSTRAP IMPORTS
+// ============================================
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/bootstrap-reboot.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-utilities.scss";
 @import "../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
+// ============================================
+// ADDITIONAL VARIABLES
+// ============================================
 $disabled-color: $gray-600;
