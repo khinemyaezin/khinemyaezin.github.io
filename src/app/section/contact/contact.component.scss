@@ -102,6 +102,8 @@ footer {
   bottom: 1rem;
   left: 0;
   right: 0;
+  z-index: 1101;
+  pointer-events: auto;
   text-align: center;
   font-size: 0.9rem;
   padding: 1rem;
@@ -129,6 +131,10 @@ footer {
       padding: 0.5rem 1.5rem;
       border-radius: 0.5rem;
       display: inline-block;
+      position: relative;
+      z-index: 1102;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
       transition: all 0.3s ease;
 
       &:hover {
@@ -151,5 +157,19 @@ footer {
 
   p {
     margin: 0;
+    color: $gray-300;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact__container {
+    justify-content: flex-start;
+    padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  }
+
+  footer {
+    position: static;
+    margin-top: 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
   }
 }
