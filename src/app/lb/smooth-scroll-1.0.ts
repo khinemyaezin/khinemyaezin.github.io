@@ -13,7 +13,8 @@ export class SmoothScrollV1 implements SmoothScroll {
 
     private lastTouchY: number = 0;
     private isTouchStart: boolean = true;
-    private touchSensitivity = 1;
+    private touchSensitivity = 2.6;
+    private minTouchDelta = 1;
 
     constructor(private el: ElementRef, private renderer: Renderer2) { }
 
@@ -54,7 +55,12 @@ export class SmoothScrollV1 implements SmoothScroll {
             const deltaY = this.lastTouchY - currentTouchY;
             this.lastTouchY = currentTouchY;
 
-            return deltaY * this.touchSensitivity;
+            const amplifiedDelta = deltaY * this.touchSensitivity;
+            if (Math.abs(amplifiedDelta) < this.minTouchDelta) {
+                return 0;
+            }
+
+            return amplifiedDelta;
         }
         return 0;
     }
