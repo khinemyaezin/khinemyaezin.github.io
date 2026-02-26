@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+# Compiled CSS files (generated from SCSS)
+*.css
+*.css.map
+!node_modules/**/*.css

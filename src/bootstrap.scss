@@ -1,6 +1,12 @@
+// ============================================
+// BOOTSTRAP CUSTOMIZATION
+// Import variables first to enable Bootstrap customization
+// ============================================
 @import "./variables.scss";
-//@import "../node_modules/bootstrap/scss/bootstrap.scss";
 
-.icon-link i  {
-    margin-top: -5px;
+// ============================================
+// CUSTOM BOOTSTRAP OVERRIDES
+// ============================================
+.icon-link i {
+  margin-top: -5px;
 }

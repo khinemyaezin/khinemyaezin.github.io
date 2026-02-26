@@ -1,21 +1,27 @@
- @import "bootstrap.scss";
+// ============================================
+// MAIN STYLES ENTRY POINT
+// This file imports Bootstrap and defines global styles
+// ============================================
 
+// Import Bootstrap customizations
+@import "bootstrap.scss";
+
+// ============================================
+// CUSTOM SCROLLBAR STYLES
+// ============================================
 ::-webkit-scrollbar {
   width: 5px !important;
   height: 5px !important;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #0b0b0b00;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #3a566f;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #6b8398;
 }

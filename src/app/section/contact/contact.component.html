@@ -15,17 +15,20 @@
                 <i class="bi bi-linkedin icon"></i>
                 LINKEDIN
             </a>
-            <a href="https://www.instagram.com/effenkhine/" target="_blank" class="link-6 magnetic-link" role="button" tabindex="0"
-               #instagramLink
-               (mousemove)="onMagneticMove($event, instagramLink)"
-               (mouseleave)="onMagneticLeave(instagramLink)">
-                <i class="bi bi-instagram icon"></i>
-                INSTAGRAM
+            <a href="https://github.com/khinemyaezin" target="_blank" class="link-6 magnetic-link" role="button" tabindex="0"
+               #githubLink
+               (mousemove)="onMagneticMove($event, githubLink)"
+               (mouseleave)="onMagneticLeave(githubLink)">
+                <i class="bi bi-github icon"></i>
+                GITHUB
             </a>
         </div>
         <footer class="position-absolute bottom-0 w-100">
-            <div class="flex flex-row justify-center gap-5">
-                <p class="text-center">©{{today | date:'yyyy'}} khinemyaezin</p>
+            <div class="flex flex-column justify-center gap-3 align-items-center">
+                <a href="https://khinemyaezin.com/resume" target="_blank" class="resume-link text-decoration-none" aria-label="Download Resume">
+                    <i class="bi bi-file-earmark-arrow-down"></i> Resume
+                </a>
+                <p class="text-center mb-0">©{{today | date:'yyyy'}} khinemyaezin</p>
             </div>
         </footer>
     </div>

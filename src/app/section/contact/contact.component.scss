@@ -71,13 +71,13 @@
     text-decoration: line-through;
 
     &:nth-child(1) .icon {
-      left: 50px;
+      left: 20px;
     }
     &:nth-child(2) .icon {
-      left: 35px;
+      left: 20px;
     }
     &:nth-child(3) .icon {
-      left: 25px;
+      left: 20px;
     }
   }
 
@@ -110,6 +110,46 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1.25rem;
+    
+    &.flex-column {
+      flex-direction: column;
+    }
+    
+    &.gap-3 {
+      gap: 1rem;
+    }
+  }
+
+  a {
+    color: inherit;
+    transition: color 0.3s ease, transform 0.3s ease;
+
+    &.resume-link {
+      border: 2px solid currentColor;
+      padding: 0.5rem 1.5rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: $primary;
+        border-color: $primary;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba($primary, 0.3);
+      }
+    }
+
+    &:not(.resume-link):hover {
+      color: $primary;
+      transform: translateY(-2px);
+    }
+
+    i {
+      margin-right: 0.25rem;
+    }
+  }
+
+  p {
+    margin: 0;
   }
 }

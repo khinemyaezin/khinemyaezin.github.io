@@ -68,8 +68,8 @@ export class ProjectComponent extends DadComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     if (typeof window == 'undefined') return;
 
-    this.setScrollContainerHeight();
     this.setTargetX();
+    this.setScrollContainerHeight();
     this.animateScrolling();
     this.handleWindowSizeChange();
   }
@@ -90,27 +90,28 @@ export class ProjectComponent extends DadComponent implements AfterViewInit {
     combineLatest([this.intersection.visible,  this.windowResize.windowResize])
     .pipe( takeUntil(this.destroy$),filter(([visible, scroll]) => visible === true))
     .subscribe(()=>{
-      this.setScrollContainerHeight();
       this.setTargetX();
+      this.setScrollContainerHeight();
       //this.animateProjects();
     })
   }
 
   setScrollContainerHeight() {
-    const projectCount = this._projects.length;
-    const projectHeight = window.innerWidth; // Or the height of each project
-    this.totalHeight = projectCount * projectHeight;
+    const isPortrait = window.innerHeight > window.innerWidth;
+    const scrollDistanceMultiplier = isPortrait ? 1.8 : 1;
+    this.totalHeight = window.innerHeight + this.toX * scrollDistanceMultiplier;
     this.render.setStyle(this.section.nativeElement, 'height', `${this.totalHeight}px`);
   }
 
   setTargetX() {
-    this.toX = this.totalHeight - window.innerWidth;
+    const sliderWidth = this.projectsSlider.nativeElement.scrollWidth;
+    this.toX = Math.max(0, sliderWidth - window.innerWidth);
   }
 
   animateProjects() {
     const animate = () => {
       let scrolledDistanceFromTop = Math.max(0, -this.section.nativeElement.getBoundingClientRect().top);
-      const height = this.totalHeight - window.innerHeight;
+      const height = Math.max(1, this.totalHeight - window.innerHeight);
 
       let percentage = scrolledDistanceFromTop / height;
       percentage = Math.max(0, Math.min(1, percentage));
