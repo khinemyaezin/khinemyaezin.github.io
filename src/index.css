@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global SCSS lives in styles/global.scss (imported after this file so
+   it wins specificity ties). Keep this file for Tailwind + minimal resets only. */

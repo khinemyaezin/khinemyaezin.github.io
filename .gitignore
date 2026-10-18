@@ -10,6 +10,10 @@
 /node_modules
 npm-debug.log
 yarn-error.log
+.bun.lockb
+
+# Bun
+bun.lockb
 
 # IDEs and editors
 .idea/
@@ -19,8 +23,6 @@ yarn-error.log
 *.launch
 .settings/
 *.sublime-workspace
-
-# Visual Studio Code
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -30,18 +32,13 @@ yarn-error.log
 
 # Miscellaneous
 /.angular/cache
-.sass-cache/
-/connect.lock
+/.next
+/out/
 /coverage
+/connect.lock
 /libpeerconnection.log
-testem.log
-/typings
+/testimony.log
 
 # System files
 .DS_Store
 Thumbs.db
-
-# Compiled CSS files (generated from SCSS)
-*.css
-*.css.map
-!node_modules/**/*.css
