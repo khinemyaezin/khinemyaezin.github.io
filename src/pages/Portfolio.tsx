@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import { useCursor } from '@/hooks/useCursor';
+import { useSmoothScroll } from '@/hooks/useSmoothScroll';
 import ScrollProgress from '@/components/layout/ScrollProgress';
 import Hero from '@/components/sections/Hero';
 import Introduction from '@/components/sections/Introduction';
@@ -9,12 +11,14 @@ import Projects from '@/components/sections/Projects';
 import Contact from '@/components/sections/Contact';
 
 export default function Portfolio() {
+  const mainRef = useRef<HTMLElement>(null);
   useCursor();
+  useSmoothScroll(mainRef);
 
   return (
     <>
       <ScrollProgress />
-      <main>
+      <main ref={mainRef}>
         <div className="scroll__container">
           <Hero />
           <Introduction />
