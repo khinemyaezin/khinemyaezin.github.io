@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #89f7fe;
+    --secondary: #66a6ff;
+    --black: #161616;
+    --background: #161616;
+    --max-width: none;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+  }
+
+  html,
+  body {
+    overscroll-behavior: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  body {
+    color: #f8f9fa;
+    font-family: "Ubuntu Mono", monospace;
+    background-color: #161616;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+
+  h5 {
+    font-size: calc(1.25rem + 0.3vw);
+  }
+
+  h6 {
+    font-size: 1rem;
+  }
+
+  strong {
+    color: #66a6ff;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: #89f7fe;
+    text-decoration: underline;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+
+  main {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    background-color: #161616;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Custom scrollbar styles */
+  ::-webkit-scrollbar {
+    width: 5px !important;
+    height: 5px !important;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0b0b0b00;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3a566f;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6b8398;
+  }
+}
+
+@layer components {
+  .custom-cursor,
+  .cursor-trail {
+    display: none;
+  }
+
+  @media (min-width: 992px) and (hover: hover) and (pointer: fine) {
+    .custom-cursor,
+    .cursor-trail {
+      display: block;
+    }
+
+    body,
+    a,
+    button,
+    [role="button"] {
+      cursor: none;
+    }
+  }
+
+  .custom-cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #89f7fe;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 10000;
+    mix-blend-mode: difference;
+    transition:
+      transform 0.15s ease,
+      width 0.2s ease,
+      height 0.2s ease;
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor.cursor-hover {
+    width: 50px;
+    height: 50px;
+    border-color: #66a6ff;
+  }
+
+  .cursor-trail {
+    width: 8px;
+    height: 8px;
+    background: #89f7fe;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.3s ease;
+    transform: translate(-50%, -50%);
+    opacity: 0.6;
+  }
+}
+
+@layer utilities {
+  .fade-in {
+    opacity: 0;
+  }
+
+  .fade-in.show {
+    @apply animate-fade-in;
+  }
+
+  .gradient-text {
+    background: linear-gradient(to right, #89f7fe, #66a6ff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  .text__overlay.door-closed .text__header__left,
+  .text__overlay.door-closed .text__header__right {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .exp__post.inactive {
+    background-color: #161616;
+    color: #6c757d !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .exp__post.inactive .post__container {
+    transform: scale(0.8);
+  }
+
+  .exp__post.inactive .gradient-text {
+    color: #6c757d !important;
+  }
+
+  .rw-word.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
