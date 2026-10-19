@@ -53,19 +53,22 @@ export default function Story() {
   }, [isVisible, sectionRef]);
 
   return (
-    <section id="about" ref={sectionRef}>
-      <div className="scroll__sticky">
-        <div className="wrapper py-12">
-          <div className="flex mb-12">
-            <div className="profile-wrapper gradient-bg-base animate" ref={mediaRef}>
+    <section id="about" className="h-[200%] w-full text-gray-300" ref={sectionRef}>
+      <div className="sticky top-0 h-1/2 w-full">
+        <div className="mx-auto flex h-full max-w-[80%] flex-col justify-center py-12 lg:max-w-[60%] xl:max-w-[50%]">
+          <div className="mb-12 flex">
+            <div
+              className="animate-gradient-bg block right-0 rounded-full bg-gradient-to-r from-gray-900 to-gray-800 bg-[length:300%_300%] p-4 rotate-[351deg] will-change-transform"
+              ref={mediaRef}
+            >
               <img
                 src={`${import.meta.env.BASE_URL}${storyData.profileImage}`}
-                className="profile-img"
+                className="h-[clamp(1rem,10cqi,10rem)] object-contain"
                 alt="Profile"
               />
             </div>
           </div>
-          <div className="content">
+          <div className="relative [&_p]:text-balance [&_strong]:font-semibold [&_strong]:text-primary">
             {storyData.paragraphs.map((paragraph, index) => (
               <p
                 key={index}

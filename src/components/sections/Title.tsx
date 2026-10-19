@@ -57,17 +57,19 @@ export default function Title({ message }: TitleProps) {
   }, [isVisible, sectionRef, texts.length]);
 
   return (
-    <section id="title__section" ref={sectionRef}>
-      <div className="title__sticky">
+    <section id="title__section" className="relative w-full" ref={sectionRef}>
+      <div className="sticky top-0">
         {texts.map((t, index) => (
           <span
             key={index}
-            className="rw-word"
+            className="rw-word absolute left-0 top-0 inline-block h-screen w-full scale-[0.8] opacity-0 [transition:opacity_0.5s_ease-in-out,transform_0.7s_ease-in-out]"
             ref={(el: HTMLSpanElement | null) => {
               wordsRef.current[index] = el;
             }}
           >
-            <h2 className="rw-sentence">{t}</h2>
+            <h2 className="relative flex h-full w-full items-center justify-center font-title text-[clamp(2rem,15cqi,20rem)] text-gray-100">
+              {t}
+            </h2>
           </span>
         ))}
       </div>

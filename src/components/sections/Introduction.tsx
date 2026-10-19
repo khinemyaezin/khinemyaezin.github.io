@@ -77,24 +77,33 @@ export default function Introduction() {
   }, [isVisible, sectionRef]);
 
   return (
-    <section id="media" ref={sectionRef}>
-      <div className="shim"></div>
-      <div className="scroll__sticky">
-        <div className="media__wrapper gap-4">
-          <div className="text__overlay" ref={heroRef}>
-            <div className="text__header__left" ref={textHeaderLeftRef}>
+    <section id="media" className="flex h-[200%] w-full justify-center" ref={sectionRef}>
+      <div className="absolute left-0 top-0 z-[2] h-full w-full"></div>
+      <div className="sticky top-0 h-1/2 w-full">
+        <div className="flex h-full w-full flex-col justify-center overflow-hidden gap-4">
+          <div
+            className="text__overlay flex w-full justify-center overflow-hidden"
+            ref={heroRef}
+          >
+            <div
+              className="text__header__left w-full scale-[0.8] self-start text-right font-hero text-[clamp(1rem,15cqi,20rem)] opacity-50 transition-transform duration-300 [transition-timing-function:ease] [&>span]:inline-block"
+              ref={textHeaderLeftRef}
+            >
               {LEFT_TEXT.split('').map((char, i) => (
                 <span key={i}>{char}</span>
               ))}
             </div>
-            <div className="text__header__right" ref={textHeaderRightRef}>
+            <div
+              className="text__header__right w-full scale-[0.8] self-end text-left font-hero text-[clamp(1rem,15cqi,20rem)] opacity-50 transition-transform duration-300 [transition-timing-function:ease] [&>span]:inline-block"
+              ref={textHeaderRightRef}
+            >
               {RIGHT_TEXT.split('').map((char, i) => (
                 <span key={i}>{char}</span>
               ))}
             </div>
           </div>
-          <div className="footer__container fade-in" ref={footerRef}>
-            <div className="footer__text text-center">
+          <div className="fade-in relative" ref={footerRef}>
+            <div className="flex flex-row items-center justify-center text-center font-title uppercase">
               <h4>
                 A Software Engineer
               

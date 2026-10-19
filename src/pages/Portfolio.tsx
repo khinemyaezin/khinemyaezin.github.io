@@ -19,7 +19,7 @@ export default function Portfolio() {
     <>
       <ScrollProgress />
       <main ref={mainRef}>
-        <div className="scroll__container">
+        <div className="relative h-full w-full">
           <Hero />
           <Introduction />
           <Story />

@@ -20,5 +20,11 @@ export default function ScrollProgress() {
     return () => main.removeEventListener('scroll', onScroll);
   }, []);
 
-  return <div ref={barRef} className="scroll-progress" style={{ width: '0%' }} />;
+  return (
+    <div
+      ref={barRef}
+      className="pointer-events-none fixed left-0 top-0 z-[9999] h-[3px] origin-left will-change-transform bg-gradient-to-r from-primary to-secondary"
+      style={{ width: '0%' }}
+    />
+  );
 }
