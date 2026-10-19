@@ -84,6 +84,27 @@
     background-color: #161616;
   }
 
+  section {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .scroll__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .scroll__sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 50%;
+  }
+
   /* Custom scrollbar styles */
   ::-webkit-scrollbar {
     width: 5px !important;
@@ -105,7 +126,7 @@
 
 @layer components {
   /* ============================================
-     Theme
+     Theme Utilities
      ============================================ */
   .gradient-text {
     background: linear-gradient(to right, #89f7fe, #66a6ff);
@@ -148,8 +169,34 @@
     pointer-events: none;
   }
 
+  .text-glow {
+    text-shadow:
+      0 0 10px rgba(137, 247, 254, 0.5),
+      0 0 20px rgba(137, 247, 254, 0.3),
+      0 0 40px rgba(137, 247, 254, 0.1);
+  }
+
+  .text-glow-secondary {
+    text-shadow:
+      0 0 10px rgba(102, 166, 255, 0.5),
+      0 0 20px rgba(102, 166, 255, 0.3),
+      0 0 40px rgba(102, 166, 255, 0.1);
+  }
+
+  .section-divider {
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #89f7fe, transparent);
+    margin: 0 auto;
+    transition: width 1s ease;
+  }
+
+  .section-divider.visible {
+    width: 80%;
+  }
+
   /* ============================================
-     Text reveal
+     Text Reveal
      ============================================ */
   .text__reveal {
     line-height: 1;
@@ -165,7 +212,7 @@
   }
 
   /* ============================================
-     Custom cursor
+     Custom Cursor
      ============================================ */
   .custom-cursor,
   .cursor-trail {
@@ -222,8 +269,72 @@
   }
 
   /* ============================================
+     Hero
+     ============================================ */
+  #hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  .hero__container {
+    height: 100%;
+    width: 100%;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+  }
+
+  .hero__title {
+    overflow: hidden;
+  }
+
+  .hero__title__header {
+    font-family: "Delicious Handrawn", sans-serif;
+    font-size: clamp(2rem, 15cqi, 20rem);
+  }
+
+  /* ============================================
      Introduction
      ============================================ */
+  #media {
+    display: flex;
+    justify-content: center;
+    height: 200%;
+    width: 100%;
+  }
+
+  .shim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .media__wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .text__overlay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
   .text__header__left,
   .text__header__right {
     font-family: "Reenie Beanie", sans-serif;
@@ -256,9 +367,70 @@
     opacity: 1;
   }
 
+  .footer__container {
+    position: relative;
+  }
+
+  .footer__text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: "Delicious Handrawn", sans-serif;
+    text-transform: uppercase;
+  }
+
+  .footer__icon {
+    object-fit: contain;
+    filter: invert(100%);
+    height: auto;
+    width: calc(1.275rem + 0.3vw);
+    margin-top: -5px;
+  }
+
   /* ============================================
      Story
      ============================================ */
+  #about {
+    color: #dee2e6;
+    width: 100%;
+    height: 200%;
+  }
+
+  .wrapper {
+    height: 100%;
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  @media (min-width: 576px) {
+    .wrapper {
+      max-width: 80%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .wrapper {
+      max-width: 60%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .wrapper {
+      max-width: 50%;
+    }
+  }
+
+  @media (max-width: 575.98px) {
+    .wrapper {
+      max-width: 80%;
+    }
+  }
+
   .profile-wrapper {
     display: block;
     left: auto;
@@ -267,6 +439,11 @@
     border-radius: 50%;
     will-change: transform;
     transform: rotate(351deg);
+  }
+
+  .profile-img {
+    height: clamp(1rem, 10cqi, 10rem);
+    object-fit: contain;
   }
 
   .content {
@@ -279,11 +456,33 @@
 
   .content p strong {
     color: #89f7fe;
+    font-weight: 600;
   }
 
   /* ============================================
      Experience
      ============================================ */
+  #exp {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .exp__hero,
+  .exp__post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    max-width: var(--max-width);
+    overflow: hidden;
+    height: 50%;
+  }
+
   .exp__post {
     background-color: #212529;
     transition: background-color 0.2s ease-out;
@@ -304,9 +503,157 @@
     color: #6c757d !important;
   }
 
+  .post {
+    position: relative;
+    width: 90vw;
+    height: 100%;
+    padding: 1rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    will-change: transform;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .post__container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease-out;
+  }
+
+  .post__body {
+    width: 90%;
+  }
+
+  @media (min-width: 576px) {
+    .post__body {
+      width: 80%;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .post__body {
+      width: 70%;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .post__body {
+      width: 70%;
+    }
+  }
+
+  .post__body .title {
+    font-family: "Delicious Handrawn", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(2rem, 4cqi, 10rem);
+    margin: auto;
+  }
+
+  .location {
+    color: #adb5bd;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 0.875rem;
+  }
+
+  .seperator-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .seperator {
+    margin-bottom: 10px;
+    width: 35px;
+    height: 3px;
+    background: #66a6ff;
+    border: none;
+  }
+
+  .post__grid {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+  }
+
+  @media (min-width: 992px) {
+    .post__grid {
+      flex-direction: row;
+    }
+  }
+
+  .post__grid__item {
+    align-content: center;
+    align-items: center;
+  }
+
+  .exp__post:nth-of-type(2n) {
+    justify-content: flex-end;
+  }
+
+  .exp__post:nth-of-type(2n) .title {
+    text-align: right;
+  }
+
+  .exp__post:nth-of-type(2n) h5 {
+    justify-content: flex-end;
+  }
+
+  .exp__post:nth-of-type(2n) .seperator-wrapper {
+    justify-content: flex-end;
+  }
+
+  .exp__post:nth-of-type(2n) p {
+    text-align: right;
+  }
+
+  .exp__post:nth-of-type(1n) {
+    justify-content: flex-start;
+  }
+
+  .exp__post:nth-of-type(1n) .title {
+    text-align: left;
+  }
+
+  .exp__post:nth-of-type(1n) h5 {
+    justify-content: flex-start;
+  }
+
+  .exp__post:nth-of-type(1n) .seperator-wrapper {
+    justify-content: flex-start;
+  }
+
+  .exp__post:nth-of-type(1n) p {
+    text-align: left;
+  }
+
   /* ============================================
-     Title
+     Title Section
      ============================================ */
+  #title__section {
+    position: relative;
+    width: 100%;
+  }
+
+  .title__sticky {
+    position: sticky;
+    top: 0;
+  }
+
+  .title__sticky h2 {
+    font-size: clamp(2rem, 15cqi, 20rem);
+    font-family: "Delicious Handrawn", sans-serif;
+    color: #f8f9fa;
+  }
+
   .rw-word {
     display: inline-block;
     opacity: 0;
@@ -341,6 +688,41 @@
   /* ============================================
      Projects
      ============================================ */
+  #projects {
+    position: relative;
+  }
+
+  .projects__sticky {
+    position: sticky;
+    top: 0;
+    width: 100%;
+  }
+
+  .slider__container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .projects__slider {
+    height: 100%;
+    display: flex;
+    width: min-content;
+    overflow: hidden;
+    will-change: transform;
+    transition: translate 0.2s;
+  }
+
+  .project {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .feature-project {
     visibility: visible;
     opacity: 1;
@@ -558,6 +940,16 @@
   /* ============================================
      Contact
      ============================================ */
+  #contact {
+    position: relative;
+    background-color: #212529;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .contact__container {
     width: 100%;
     min-height: 100vh;

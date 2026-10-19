@@ -4,6 +4,7 @@
   "private": true,
   "packageManager": "bun@1.1.0",
   "description": "Personal portfolio website - React 19.3 + Vite + Tailwind CSS",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,17 +12,14 @@
     "test": "vitest run",
     "test:e2e": "playwright test",
     "lint": "eslint src --ext .ts,.tsx",
-    "typecheck": "bunx tsc@5.9.3 --noEmit",
+    "typecheck": "tsc --noEmit",
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "bootstrap": "^5.3.3",
-    "bootstrap-icons": "^1.11.3",
     "lucide-react": "^0.400.0",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-router-dom": "^6.26.0",
-    "sass": "^1.77.0"
+    "react-router-dom": "^6.26.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.0.0",

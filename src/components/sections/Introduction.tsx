@@ -96,12 +96,8 @@ export default function Introduction() {
           <div className="footer__container fade-in" ref={footerRef}>
             <div className="footer__text text-center">
               <h4>
-                A Software Engineer &#64;
-                <img
-                  src={`${import.meta.env.BASE_URL}merlion.svg`}
-                  alt="Icon"
-                  className="footer__icon"
-                />
+                A Software Engineer
+              
               </h4>
             </div>
           </div>
