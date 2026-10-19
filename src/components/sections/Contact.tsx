@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Mail, Linkedin, Github, FileDown } from 'lucide-react';
 import { useMagnetic } from '@/hooks/useMagnetic';
 
 export default function Contact() {
@@ -25,7 +26,7 @@ export default function Contact() {
             role="button"
             tabIndex={0}
           >
-            <i className="bi bi-envelope icon"></i>
+            <Mail className="icon" />
             EMAIL
           </a>
           <a
@@ -37,7 +38,7 @@ export default function Contact() {
             role="button"
             tabIndex={0}
           >
-            <i className="bi bi-linkedin icon"></i>
+            <Linkedin className="icon" />
             LINKEDIN
           </a>
           <a
@@ -49,20 +50,20 @@ export default function Contact() {
             role="button"
             tabIndex={0}
           >
-            <i className="bi bi-github icon"></i>
+            <Github className="icon" />
             GITHUB
           </a>
         </div>
-        <footer className="position-absolute bottom-0 w-100">
-          <div className="d-flex flex-column justify-content-center gap-3 align-items-center">
+        <footer className="absolute bottom-0 w-full">
+          <div className="flex flex-col justify-center gap-4 items-center">
             <a
               href="https://khinemyaezin.com/resume"
               target="_blank"
               rel="noopener noreferrer"
-              className="resume-link text-decoration-none"
+              className="resume-link no-underline"
               aria-label="Download Resume"
             >
-              <i className="bi bi-file-earmark-arrow-down"></i> Resume
+              <FileDown className="inline-block h-3.5 w-3.5" /> Resume
             </a>
             <p className="text-center mb-0">©{today.getFullYear()} khinemyaezin</p>
           </div>

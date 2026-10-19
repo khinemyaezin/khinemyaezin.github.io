@@ -55,8 +55,8 @@ export default function Story() {
   return (
     <section id="about" ref={sectionRef}>
       <div className="scroll__sticky">
-        <div className="wrapper py-5">
-          <div className="d-flex mb-5">
+        <div className="wrapper py-12">
+          <div className="flex mb-12">
             <div className="profile-wrapper gradient-bg-base animate" ref={mediaRef}>
               <img
                 src={`${import.meta.env.BASE_URL}${storyData.profileImage}`}

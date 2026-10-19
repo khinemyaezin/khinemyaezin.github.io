@@ -1,6 +1,13 @@
 import { useRef, useEffect } from 'react';
+import { ExternalLink, Github, Download, type LucideIcon } from 'lucide-react';
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
 import projectsData from '@/data/projects.json';
+
+const ICON_MAP: Record<string, LucideIcon> = {
+  'box-arrow-up-right': ExternalLink,
+  github: Github,
+  download: Download,
+};
 
 export default function Projects() {
   const [sectionRef] = useIntersectionObserver();
@@ -76,17 +83,20 @@ export default function Projects() {
                       ))}
                     </ul>
                     <div className="project-links">
-                      {project.links.map((l) => (
-                        <a
-                          key={l.url}
-                          href={l.url}
-                          aria-label="GitHub Link"
-                          rel="noopener noreferrer"
-                          target="_blank"
-                        >
-                          <i className={`bi bi-${l.icon}`}></i>
-                        </a>
-                      ))}
+                      {project.links.map((l) => {
+                        const Icon = ICON_MAP[l.icon] ?? ExternalLink;
+                        return (
+                          <a
+                            key={l.url}
+                            href={l.url}
+                            aria-label="GitHub Link"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                          >
+                            <Icon className="h-6 w-6" />
+                          </a>
+                        );
+                      })}
                     </div>
                   </div>
                   <div className="project-image">

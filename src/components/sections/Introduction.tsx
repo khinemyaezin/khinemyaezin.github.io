@@ -80,7 +80,7 @@ export default function Introduction() {
     <section id="media" ref={sectionRef}>
       <div className="shim"></div>
       <div className="scroll__sticky">
-        <div className="media__wrapper gap-3">
+        <div className="media__wrapper gap-4">
           <div className="text__overlay" ref={heroRef}>
             <div className="text__header__left" ref={textHeaderLeftRef}>
               {LEFT_TEXT.split('').map((char, i) => (

@@ -79,11 +79,11 @@ export default function Experience() {
           <div className="post">
             <div className="post__container">
               <div className="post__body">
-                <h4 className="title mb-3">
+                <h4 className="title mb-4">
                   <span className="gradient-text">{post.title}</span>
                 </h4>
-                <div className="mb-3">
-                  <h5 className="d-flex gap-2 location">
+                <div className="mb-4">
+                  <h5 className="flex gap-2 location">
                     <span>{post.company}</span>
                     <span>{post.duration}</span>
                   </h5>
@@ -93,7 +93,7 @@ export default function Experience() {
                 </div>
                 <div className="post__grid">
                   <div className="post__grid__item">
-                    <p className="fs-6">{post.desc}</p>
+                    <p className="text-base">{post.desc}</p>
                   </div>
                 </div>
               </div>
